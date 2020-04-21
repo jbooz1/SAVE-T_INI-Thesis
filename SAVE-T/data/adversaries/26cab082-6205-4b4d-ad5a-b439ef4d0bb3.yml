@@ -1,0 +1,9 @@
+description: scan then fingerprint then metasploit
+id: 26cab082-6205-4b4d-ad5a-b439ef4d0bb3
+name: scan_fingerprint_metasploit
+phases:
+  1: [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  2: [e126cf64-e958-4677-a0c4-c0420b3f3ad8, 1e0ff374-63e2-4456-bece-f73732de08a1,
+    05c622b0-1ea4-40f3-8b45-affb97befa3d, 00d0b0bd-d411-4a3d-bcbd-32687d10c03f]
+  3: [4c3d38aa-10bc-4d3e-84cd-021308d0793b, 88c8beaf-da10-489e-896f-49fb583a1a0c,
+    bc77ffeb-74f3-486f-8a9e-2af50493b4fd, 1315ea39-be5e-4a21-9dac-ac54b1a7cd25]

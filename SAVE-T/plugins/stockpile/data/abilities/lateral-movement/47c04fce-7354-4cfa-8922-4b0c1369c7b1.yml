@@ -1,0 +1,19 @@
+---
+
+- id: 47c04fce-7354-4cfa-8922-4b0c1369c7b1
+  name: Exploit Socket With Metasploit
+  description: Use Metasploit to Broadly Exploit a Remote Port
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.host.socket} --server #{server}
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

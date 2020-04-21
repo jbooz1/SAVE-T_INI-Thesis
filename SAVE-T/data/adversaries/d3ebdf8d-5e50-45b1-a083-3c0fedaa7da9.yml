@@ -1,0 +1,6 @@
+description: try all on all exploit plan
+id: d3ebdf8d-5e50-45b1-a083-3c0fedaa7da9
+name: Naive_exploit_iot
+phases:
+  1: [5c1f2f9d-d88f-403e-9f2f-253b55aacfaa, c68e46ba-8576-44c7-b411-4b63a511fc8f,
+    eedb6c01-4a41-48cb-83b7-82d6fa735bce, e312ac69-48c3-4831-90df-d755efc59eab]

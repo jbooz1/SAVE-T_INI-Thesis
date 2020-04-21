@@ -1,0 +1,19 @@
+---
+
+- id: 1315ea39-be5e-4a21-9dac-ac54b1a7cd25
+  name: Exploit FTP With Metasploit
+  description: Use Metasploit to Exploit an FTP Server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.service.ftp} --server #{server}
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

@@ -1,0 +1,46 @@
+---
+
+- id: 00d0b0bd-d411-4a3d-bcbd-32687d10c03f
+  name: Scan Host to Fingerprint Apache Struts
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ApacheStruts
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.apachestruts
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ApacheStruts
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.apachestruts
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ApacheStruts
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.apachestruts
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ApacheStruts
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.apachestruts
+          script: ''
+

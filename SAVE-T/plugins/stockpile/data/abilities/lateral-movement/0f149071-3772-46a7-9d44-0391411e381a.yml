@@ -1,0 +1,45 @@
+---
+
+- id: 0f149071-3772-46a7-9d44-0391411e381a
+  name: Exploit TrendNet IP Camera
+  description: Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 trendnet-exploit.py --target #{remote.service.trendnet}
+        payload: trendnet-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.trendnet_user
+          script: ''
+    darwin:
+      sh:
+        command: |
+          python3 trendnet-exploit.py --target #{remote.service.trendnet}
+        payload: trendnet-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.trendnet_user
+          script: ''
+    windows:
+      psh:
+        command: |
+           python3 trendnet-exploit.py --target #{remote.service.trendnet}
+        payload: trendnet-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.trendnet_user
+          script: ''
+      cmd:
+        command: |
+          python3 trendnet-exploit.py --target #{remote.service.trendnet}
+        payload: trendnet-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.trendnet_user
+          script: ''

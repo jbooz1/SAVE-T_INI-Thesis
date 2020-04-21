@@ -1,0 +1,45 @@
+---
+
+- id: 5c1f2f9d-d88f-403e-9f2f-253b55aacfaa
+  name: Naive Exploit ASUS RT-N56U -- remote ip
+  description: Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python2 asus-exploit.py --target #{remote.host.ip}
+        payload: asus-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.asus_user
+          script: ''
+    darwin:
+      sh:
+        command: |
+          python2 asus-exploit.py --target #{remote.host.ip}
+        payload: asus-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.asus_user
+          script: ''
+    windows:
+      psh:
+        command: |
+           python2 asus-exploit.py --target #{remote.host.ip}
+        payload: asus-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.asus_user
+          script: ''
+      cmd:
+        command: |
+          python2 asus-exploit.py --target #{remote.host.ip}
+        payload: asus-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.asus_user
+          script: ''

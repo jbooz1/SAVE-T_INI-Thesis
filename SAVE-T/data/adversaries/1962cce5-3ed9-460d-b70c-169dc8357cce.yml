@@ -1,0 +1,7 @@
+description: scan for ports, then exploit with metasploit and execute a sandcat agent
+id: 1962cce5-3ed9-460d-b70c-169dc8357cce
+name: metasploit sandcat
+phases:
+  1: [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  2: [47c04fce-7354-4cfa-8922-4b0c1369c7b1]
+  3: [d189c023-314c-4445-b1c5-6634b827e183]

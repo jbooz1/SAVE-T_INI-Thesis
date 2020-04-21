@@ -1,0 +1,19 @@
+---
+
+- id: 4c3d38aa-10bc-4d3e-84cd-021308d0793b
+  name: Exploit SMB With Metasploit
+  description: Use Metasploit to Exploit SMB
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.service.smb} --server #{server}
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

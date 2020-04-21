@@ -1,0 +1,9 @@
+description: find and exploit with scanning
+id: 8df25b93-b6f8-4b52-b719-32758dd8eea6
+name: smart_exploit_iot
+phases:
+  '1': [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  '2': [00d0b0bd-d411-4a3d-bcbd-32687d10c03f, 48faddd2-d150-4c2b-ac8f-e2c85b98c84c,
+    50363ad7-ce2e-42b1-a4be-04b041f65a9d, d73869fd-61fd-4f55-9b34-11d7827141a8]
+  '3': [0f149071-3772-46a7-9d44-0391411e381a, a5e34950-0687-4dae-b090-4a835e01c68d,
+    b4e1f059-7408-44d5-8c38-74acc95463e5, c6e0a60e-941b-4293-bb5e-815457f738da]

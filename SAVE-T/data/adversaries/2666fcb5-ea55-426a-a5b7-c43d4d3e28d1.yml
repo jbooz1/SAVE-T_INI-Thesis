@@ -1,0 +1,7 @@
+description: fingerprint services
+id: 2666fcb5-ea55-426a-a5b7-c43d4d3e28d1
+name: fingerprint_scanner
+phases:
+  1: [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  2: [50363ad7-ce2e-42b1-a4be-04b041f65a9d, 00d0b0bd-d411-4a3d-bcbd-32687d10c03f,
+    48faddd2-d150-4c2b-ac8f-e2c85b98c84c, d73869fd-61fd-4f55-9b34-11d7827141a8]

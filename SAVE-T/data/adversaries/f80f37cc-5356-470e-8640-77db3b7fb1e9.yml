@@ -1,0 +1,5 @@
+description: exploits asus rt-n56u
+id: f80f37cc-5356-470e-8640-77db3b7fb1e9
+name: asus rt-n56u
+phases:
+  1: [c6e0a60e-941b-4293-bb5e-815457f738da]

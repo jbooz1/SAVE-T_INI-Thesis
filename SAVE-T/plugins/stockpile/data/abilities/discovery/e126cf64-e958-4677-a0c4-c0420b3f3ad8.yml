@@ -1,0 +1,46 @@
+---
+
+- id: e126cf64-e958-4677-a0c4-c0420b3f3ad8
+  name: Quick Fingerprint SMB
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c smb
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.smb
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c smb
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.smb
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c smb
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.smb
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c smb
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.smb
+          script: ''
+

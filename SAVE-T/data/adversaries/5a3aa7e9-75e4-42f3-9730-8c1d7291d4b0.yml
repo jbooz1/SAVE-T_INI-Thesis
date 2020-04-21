@@ -1,0 +1,5 @@
+description: exploit trendnet camera
+id: 5a3aa7e9-75e4-42f3-9730-8c1d7291d4b0
+name: trendnet
+phases:
+  1: [0f149071-3772-46a7-9d44-0391411e381a]

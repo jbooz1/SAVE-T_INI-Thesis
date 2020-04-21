@@ -1,0 +1,26 @@
+---
+
+- id: a0676fe1-cd52-482e-8dde-349b73f9aa69
+  name: Preferred WIFI
+  description: See the most used WIFI networks of a machine
+  tactic: discovery
+  technique:
+    attack_id: T1016
+    name: System Network Configuration Discovery
+  platforms:
+    darwin:
+      sh:
+        command: |
+          ./wifi.sh pref
+        payload: wifi.sh
+    linux:
+      sh:
+        command: |
+          ./wifi.sh pref
+        payload: wifi.sh
+    windows:
+      psh:
+        command: |
+          .\wifi.ps1 -Pref
+        payload: wifi.ps1
+

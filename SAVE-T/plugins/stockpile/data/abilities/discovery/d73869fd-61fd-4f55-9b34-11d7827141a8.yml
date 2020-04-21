@@ -1,0 +1,46 @@
+---
+
+- id: d73869fd-61fd-4f55-9b34-11d7827141a8
+  name: Scan Host to Fingerprint Asus Routers
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c Asus
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.asus
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c Asus
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.asus
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c Asus
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.asus
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c Asus
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.asus
+          script: ''
+

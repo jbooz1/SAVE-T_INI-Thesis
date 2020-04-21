@@ -1,0 +1,5 @@
+description: only exploits thinkphp
+id: bd8fd187-4fd5-4fcc-bf19-a8432d7520c3
+name: thinkphp
+phases:
+  1: [a5e34950-0687-4dae-b090-4a835e01c68d]

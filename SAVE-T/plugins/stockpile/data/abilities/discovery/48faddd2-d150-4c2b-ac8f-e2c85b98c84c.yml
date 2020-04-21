@@ -1,0 +1,46 @@
+---
+
+- id: 48faddd2-d150-4c2b-ac8f-e2c85b98c84c
+  name: Scan Host to Fingerprint ThinkPHP
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ThinkPHP
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.thinkphp
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ThinkPHP
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.thinkphp
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ThinkPHP
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.thinkphp
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ThinkPHP
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.thinkphp
+          script: ''
+

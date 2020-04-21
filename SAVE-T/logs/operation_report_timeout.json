@@ -1,0 +1,101 @@
+{
+    "name": "timeout",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-11-20 15:30:56",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.100.130:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 59588,
+            "ppid": 20085,
+            "trusted": 1,
+            "last_trusted_seen": "2019-11-20 15:30:56",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-11-20 15:20:52",
+    "facts": [],
+    "finish": "2019-11-20 15:30:56",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 8,
+        "adversary_id": "fd8cad65-6ceb-4a82-9ed8-b6efab338c8e",
+        "name": "timeout",
+        "description": "timeout",
+        "phases": {
+            "1": [
+                {
+                    "id": 119,
+                    "ability_id": "d8fe8116-2226-45e0-a9c9-0557559ef7a8",
+                    "tactic": "execution",
+                    "technique_name": "Powershell",
+                    "technique_id": "T1086",
+                    "name": "Timeout",
+                    "test": "cHl0aG9uIC1jICJmcm9tIHRpbWUgaW1wb3J0IHNsZWVwOyBzbGVlcCgxMDAwMCki",
+                    "description": "Sleep until timeout",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 118,
+                    "ability_id": "d8fe8116-2226-45e0-a9c9-0557559ef7a8",
+                    "tactic": "execution",
+                    "technique_name": "Powershell",
+                    "technique_id": "T1086",
+                    "name": "Timeout",
+                    "test": "cHl0aG9uIC1jICJmcm9tIHRpbWUgaW1wb3J0IHNsZWVwOyBzbGVlcCgxMDAwMCki",
+                    "description": "Sleep until timeout",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [],
+                    "adversary_map_id": 52
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "d8fe8116-2226-45e0-a9c9-0557559ef7a8",
+            "paw": "kali$root",
+            "command": "python -c \"from time import sleep; sleep(10000)\"",
+            "delegated": "2019-11-20 15:20:56.165387",
+            "run": "2019-11-20 15:30:56",
+            "status": 124,
+            "description": "Sleep until timeout",
+            "name": "Timeout",
+            "attack": {
+                "tactic": "execution",
+                "technique_name": "Powershell",
+                "technique_id": "T1086"
+            }
+        }
+    ]
+}

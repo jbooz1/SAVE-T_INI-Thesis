@@ -1,0 +1,199 @@
+{
+    "name": "test asus",
+    "id": 2,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-10-13 17:02:22",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 12693,
+            "ppid": 2924,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-13 17:02:22",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-10-13 17:01:28",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 5,
+            "property": "remote.host.ip",
+            "value": "192.168.1.1",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2019-10-13 17:02:23",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 8,
+        "adversary_id": "f80f37cc-5356-470e-8640-77db3b7fb1e9",
+        "name": "asus rt-n56u",
+        "description": "exploits asus rt-n56u",
+        "phases": {
+            "1": [
+                {
+                    "id": 152,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 152,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 151,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 151,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 154,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 154,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 153,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 153,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                }
+            ]
+        }
+    },
+    "jitter": "1/2",
+    "steps": [
+        {
+            "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+            "paw": "kali$root",
+            "command": "python2 asus-exploit.py --target 192.168.1.1",
+            "delegated": "2019-10-13 17:02:08.413451",
+            "run": "2019-10-13 17:02:22",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+            "name": "Exploit ASUS RT-N56U",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

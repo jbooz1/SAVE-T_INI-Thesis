@@ -1,0 +1,46 @@
+---
+
+- id: 01526ad5-025e-46d4-ace6-eadd2ea4f55b
+  name: Quick Fingerprint Telnet
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c telnet
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.telnet
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c telnet
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.telnet
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c telnet
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.telnet
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c telnet
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.telnet
+          script: ''
+

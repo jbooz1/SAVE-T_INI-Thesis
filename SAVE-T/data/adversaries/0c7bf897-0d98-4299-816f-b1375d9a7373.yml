@@ -1,0 +1,5 @@
+description: metasploit when sockets already exist
+id: 0c7bf897-0d98-4299-816f-b1375d9a7373
+name: metasploit only
+phases:
+  1: [47c04fce-7354-4cfa-8922-4b0c1369c7b1]

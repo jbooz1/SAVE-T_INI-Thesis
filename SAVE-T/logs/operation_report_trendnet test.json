@@ -1,0 +1,199 @@
+{
+    "name": "trendnet test",
+    "id": 2,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-10-16 17:34:11",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 16464,
+            "ppid": 2924,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-16 17:34:11",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-10-16 17:34:09",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 5,
+            "property": "remote.host.ip",
+            "value": "192.168.1.250",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2019-10-16 17:34:12",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 8,
+        "adversary_id": "5a3aa7e9-75e4-42f3-9730-8c1d7291d4b0",
+        "name": "trendnet",
+        "description": "exploit trendnet camera",
+        "phases": {
+            "1": [
+                {
+                    "id": 148,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 148,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 147,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 147,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 150,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 150,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                },
+                {
+                    "id": 149,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 149,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 52
+                }
+            ]
+        }
+    },
+    "jitter": "1/2",
+    "steps": [
+        {
+            "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+            "paw": "kali$root",
+            "command": "python3 trendnet-exploit.py --target 192.168.1.250",
+            "delegated": "2019-10-16 17:34:10.860090",
+            "run": "2019-10-16 17:34:11",
+            "status": 0,
+            "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+            "name": "Exploit TrendNet IP Camera",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

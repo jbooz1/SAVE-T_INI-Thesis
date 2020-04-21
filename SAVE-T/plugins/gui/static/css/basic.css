@@ -1,0 +1,52 @@
+.home-box {
+    border-radius: 25px;
+    padding: 10px;
+    width:75%;
+    margin-top: 50px;
+    vertical-align: middle;
+    margin-bottom: 100px;
+}
+.big-head {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size:190px;
+    text-shadow: 5px 5px 5px var(--theme-color);
+}
+.small-head {
+    color: var(--font-color);
+}
+.duk-home {
+    padding: 10px;
+}
+.duk-home img {
+    height: 50px;
+    border-radius:50%;
+}
+.duk-home h3 {
+    font-size: 24px;
+}
+.duk-home p {
+    font-size: 14px;
+    text-align: left;
+}
+
+/* plugins table */
+
+.subsection {
+    margin-top: 40px;
+    position:absolute;
+    left:0;
+    right:0;
+    background-image: linear-gradient(var(--primary-background), var(--theme-color));
+}
+
+table {
+  border-collapse: collapse;
+  color: white;
+}
+
+td {
+  text-align: left;
+  padding: 8px;
+}
+

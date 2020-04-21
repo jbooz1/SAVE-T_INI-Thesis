@@ -1,0 +1,327 @@
+{
+    "name": "metasploit",
+    "id": 3,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-12-19 22:01:52",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://localhost:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 44230,
+            "ppid": 23776,
+            "trusted": 1,
+            "last_trusted_seen": "2019-12-19 22:01:52",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "pwsh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-12-19 21:44:45",
+    "facts": [
+        {
+            "id": 1,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 2,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 3,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 4,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "remote.host.socket",
+            "value": "192.169.1.1:80",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "remote.host.socket",
+            "value": "192.169.1.1:443",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 11,
+            "property": "remote.host.socket",
+            "value": "192.169.1.1:445",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 12,
+            "property": "remote.host.socket",
+            "value": "192.169.1.1:21",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 13,
+            "property": "remote.host.socket",
+            "value": "192.169.1.1:22",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2019-12-19 22:01:52",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 16,
+        "adversary_id": "619a7305-6753-480f-aef0-f3fa117d3523",
+        "name": "metasploit",
+        "description": "metasploit",
+        "phases": {
+            "1": [
+                {
+                    "id": 208,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 208,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 208,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 75
+                },
+                {
+                    "id": 207,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 207,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 207,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 75
+                },
+                {
+                    "id": 210,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 210,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 210,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 75
+                },
+                {
+                    "id": 209,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "cHl0aG9uMyBtZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5weSAtLXRhcmdldCAje3JlbW90ZS5ob3N0LnNvY2tldH0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 209,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 209,
+                            "payload": "metasploit_exploit_port.py"
+                        }
+                    ],
+                    "adversary_map_id": 75
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.169.1.1:80",
+            "delegated": "2019-12-19 21:44:48.722790",
+            "run": "2019-12-19 21:54:10",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.169.1.1:443",
+            "delegated": "2019-12-19 21:44:48.723240",
+            "run": "2019-12-19 21:55:48",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.169.1.1:445",
+            "delegated": "2019-12-19 21:44:48.723508",
+            "run": "2019-12-19 21:57:56",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.169.1.1:21",
+            "delegated": "2019-12-19 21:44:48.723728",
+            "run": "2019-12-19 22:00:38",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "python3 metasploit_exploit_port.py --target 192.169.1.1:22",
+            "delegated": "2019-12-19 21:44:48.723939",
+            "run": "2019-12-19 22:01:52",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

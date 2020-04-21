@@ -1,0 +1,19 @@
+---
+
+id: 049226b9-6a43-4d8d-b610-bf0a367ce486
+name: winExp1
+facts:
+  - property: remote.host.ip
+    value: 192.168.1.10
+  - property: remote.host.ip
+    value: 192.168.1.11
+  - property: remote.host.ip
+    value: 192.168.1.12
+  - property: remote.host.ip
+    value: 192.168.1.100
+  - property: remote.host.ip
+    value: 192.168.1.107
+  - property: remote.host.ip
+    value: 192.168.1.108
+  - property: remote.host.ip
+    value: 192.168.1.110

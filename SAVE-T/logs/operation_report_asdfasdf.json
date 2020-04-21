@@ -1,0 +1,1456 @@
+{
+    "name": "asdfasdf",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2020-03-27 20:29:26",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 37318,
+            "ppid": 10633,
+            "trusted": 1,
+            "last_trusted_seen": "2020-03-27 20:29:26",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "pwsh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "paw": "apacheStruts$tomcat",
+            "last_seen": "2020-03-27 20:28:35",
+            "architecture": "arm",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-arm",
+            "pid": 2306,
+            "ppid": 469,
+            "trusted": 0,
+            "last_trusted_seen": "2020-03-27 20:28:35",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_arm",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "paw": "thinkPHP$pi",
+            "last_seen": "2020-03-27 20:28:21",
+            "architecture": "arm",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-arm",
+            "pid": 3065,
+            "ppid": 2109,
+            "trusted": 0,
+            "last_trusted_seen": "2020-03-27 20:28:21",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_arm",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-03-27 20:28:05",
+    "facts": [
+        {
+            "id": 37,
+            "property": "remote.host.ip",
+            "value": "192.168.1.1",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "5",
+            "link_id": null
+        },
+        {
+            "id": 38,
+            "property": "remote.host.ip",
+            "value": "192.168.1.24",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "5",
+            "link_id": null
+        },
+        {
+            "id": 39,
+            "property": "remote.host.ip",
+            "value": "192.168.1.59",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "5",
+            "link_id": null
+        },
+        {
+            "id": 40,
+            "property": "remote.host.ip",
+            "value": "192.168.1.250",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "5",
+            "link_id": null
+        },
+        {
+            "id": 41,
+            "property": "remote.host.socket",
+            "value": "192.168.1.1:80",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 5
+        },
+        {
+            "id": 42,
+            "property": "remote.host.socket",
+            "value": "192.168.1.24:22",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 6
+        },
+        {
+            "id": 43,
+            "property": "remote.host.socket",
+            "value": "192.168.1.24:8080",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "6",
+            "link_id": 6
+        }
+    ],
+    "finish": "2020-03-27 20:31:59",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 11,
+        "adversary_id": "2666fcb5-ea55-426a-a5b7-c43d4d3e28d1",
+        "name": "fingerprint_scanner",
+        "description": "fingerprint services",
+        "phases": {
+            "1": [
+                {
+                    "id": 39,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyAuL3NjYW5uZXIucHkgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 39,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 39,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 63
+                },
+                {
+                    "id": 40,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyAuL3NjYW5uZXIucHkgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 40,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 40,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 63
+                },
+                {
+                    "id": 42,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNjYW5uZXIuZXhlIC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 42,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 42,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 63
+                },
+                {
+                    "id": 41,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "QzpcVXNlcnNcUHVibGljXHNjYW5uZXIuZXhlIC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 41,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 41,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 63
+                }
+            ],
+            "2": [
+                {
+                    "id": 57,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBcGFjaGVTdHJ1dHM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 57,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 57,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 65
+                },
+                {
+                    "id": 58,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBcGFjaGVTdHJ1dHM=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 58,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 58,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 65
+                },
+                {
+                    "id": 60,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXBhY2hlU3RydXRz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 60,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 60,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 65
+                },
+                {
+                    "id": 59,
+                    "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Apache Struts",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXBhY2hlU3RydXRz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 59,
+                            "name": "line",
+                            "property": "remote.service.apachestruts",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 59,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 65
+                },
+                {
+                    "id": 67,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUaGlua1BIUA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 67,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 67,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 66
+                },
+                {
+                    "id": 68,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUaGlua1BIUA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 68,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 68,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 66
+                },
+                {
+                    "id": 70,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVGhpbmtQSFA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 70,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 70,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 66
+                },
+                {
+                    "id": 69,
+                    "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint ThinkPHP",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVGhpbmtQSFA=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 69,
+                            "name": "line",
+                            "property": "remote.service.thinkphp",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 69,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 66
+                },
+                {
+                    "id": 43,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUcmVuZG5ldA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 43,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 43,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 44,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBUcmVuZG5ldA==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 44,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 44,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 46,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVHJlbmRuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 46,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 46,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 45,
+                    "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Trendnet Cameras",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgVHJlbmRuZXQ=",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 45,
+                            "name": "line",
+                            "property": "remote.service.trendnet",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 45,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 78,
+                    "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Asus Routers",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBc3Vz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 78,
+                            "name": "line",
+                            "property": "remote.service.asus",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 78,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 79,
+                    "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Asus Routers",
+                    "test": "cHl0aG9uMyAuL2ZpbmdlcnByaW50LnB5IC1zICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtYyBBc3Vz",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 79,
+                            "name": "line",
+                            "property": "remote.service.asus",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 79,
+                            "payload": "fingerprint.py"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 81,
+                    "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Asus Routers",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXN1cw==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 81,
+                            "name": "line",
+                            "property": "remote.service.asus",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 81,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                },
+                {
+                    "id": 80,
+                    "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan Host to Fingerprint Asus Routers",
+                    "test": "QzpcVXNlcnNcUHVibGljXGZpbmdlcnByaW50LmV4ZSAtcyAje3JlbW90ZS5ob3N0LnNvY2tldH0gLWMgQXN1cw==",
+                    "description": "Use dropped fingerprinter to find popular services",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 80,
+                            "name": "line",
+                            "property": "remote.service.asus",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 80,
+                            "payload": "fingerprint.exe"
+                        }
+                    ],
+                    "adversary_map_id": 67
+                }
+            ]
+        }
+    },
+    "jitter": "1/2",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.1",
+            "delegated": "2020-03-27 20:28:09.999202",
+            "run": "2020-03-27 20:28:10",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.24",
+            "delegated": "2020-03-27 20:28:10.000623",
+            "run": "2020-03-27 20:28:12",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.59",
+            "delegated": "2020-03-27 20:28:10.001329",
+            "run": "2020-03-27 20:28:15",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 ./scanner.py -i 192.168.1.250",
+            "delegated": "2020-03-27 20:28:10.002137",
+            "run": "2020-03-27 20:28:16",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./scanner.py -i 192.168.1.1",
+            "delegated": "2020-03-27 20:28:06.061886",
+            "run": "2020-03-27 20:28:06",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./scanner.py -i 192.168.1.24",
+            "delegated": "2020-03-27 20:28:06.062904",
+            "run": "2020-03-27 20:28:08",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./scanner.py -i 192.168.1.59",
+            "delegated": "2020-03-27 20:28:06.063689",
+            "run": "2020-03-27 20:28:12",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./scanner.py -i 192.168.1.250",
+            "delegated": "2020-03-27 20:28:06.064176",
+            "run": "2020-03-27 20:28:12",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./scanner.py -i 192.168.1.1",
+            "delegated": "2020-03-27 20:28:14.664835",
+            "run": "2020-03-27 20:28:14",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./scanner.py -i 192.168.1.24",
+            "delegated": "2020-03-27 20:28:14.665711",
+            "run": "2020-03-27 20:28:17",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./scanner.py -i 192.168.1.59",
+            "delegated": "2020-03-27 20:28:14.666544",
+            "run": "2020-03-27 20:28:20",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./scanner.py -i 192.168.1.250",
+            "delegated": "2020-03-27 20:28:14.667172",
+            "run": "2020-03-27 20:28:21",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Trendnet",
+            "delegated": "2020-03-27 20:28:28.023992",
+            "run": "2020-03-27 20:28:28",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Trendnet",
+            "delegated": "2020-03-27 20:28:28.024262",
+            "run": "2020-03-27 20:28:29",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Trendnet",
+            "delegated": "2020-03-27 20:28:28.024444",
+            "run": "2020-03-27 20:28:30",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:28.024587",
+            "run": "2020-03-27 20:28:31",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:28.024726",
+            "run": "2020-03-27 20:28:33",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:28.024862",
+            "run": "2020-03-27 20:28:35",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:28.024995",
+            "run": "2020-03-27 20:28:37",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:28.025176",
+            "run": "2020-03-27 20:28:39",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:28.025322",
+            "run": "2020-03-27 20:28:41",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Asus",
+            "delegated": "2020-03-27 20:28:28.025449",
+            "run": "2020-03-27 20:28:43",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Asus",
+            "delegated": "2020-03-27 20:28:28.025575",
+            "run": "2020-03-27 20:28:44",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "kali$root",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Asus",
+            "delegated": "2020-03-27 20:28:28.025701",
+            "run": "2020-03-27 20:28:45",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Trendnet",
+            "delegated": "2020-03-27 20:28:24.439411",
+            "run": "2020-03-27 20:28:25",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Trendnet",
+            "delegated": "2020-03-27 20:28:24.440164",
+            "run": "2020-03-27 20:28:27",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Trendnet",
+            "delegated": "2020-03-27 20:28:24.440774",
+            "run": "2020-03-27 20:28:29",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:24.441553",
+            "run": "2020-03-27 20:28:31",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:24.442227",
+            "run": "2020-03-27 20:28:32",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ApacheStruts",
+            "delegated": "2020-03-27 20:28:24.442828",
+            "run": "2020-03-27 20:28:33",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:24.443357",
+            "run": "2020-03-27 20:28:34",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:24.443816",
+            "run": "2020-03-27 20:28:35",
+            "status": 0,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ThinkPHP",
+            "delegated": "2020-03-27 20:28:24.444182",
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Asus",
+            "delegated": "2020-03-27 20:28:24.444673",
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Asus",
+            "delegated": "2020-03-27 20:28:24.445123",
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "apacheStruts$tomcat",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Asus",
+            "delegated": "2020-03-27 20:28:24.445439",
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Trendnet",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Trendnet",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "50363ad7-ce2e-42b1-a4be-04b041f65a9d",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Trendnet",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Trendnet Cameras",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ApacheStruts",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ApacheStruts",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "00d0b0bd-d411-4a3d-bcbd-32687d10c03f",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ApacheStruts",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Apache Struts",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c ThinkPHP",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c ThinkPHP",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "48faddd2-d150-4c2b-ac8f-e2c85b98c84c",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c ThinkPHP",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint ThinkPHP",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.1:80 -c Asus",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:22 -c Asus",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "d73869fd-61fd-4f55-9b34-11d7827141a8",
+            "paw": "thinkPHP$pi",
+            "command": "python3 ./fingerprint.py -s 192.168.1.24:8080 -c Asus",
+            "delegated": null,
+            "run": null,
+            "status": -3,
+            "description": "Use dropped fingerprinter to find popular services",
+            "name": "Scan Host to Fingerprint Asus Routers",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        }
+    ]
+}

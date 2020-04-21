@@ -1,0 +1,46 @@
+---
+
+- id: 13a0ad8c-edcc-42fb-944e-68d1c3b392e9
+  name: Scan Host to Determine EternalBlue Vulnerability Status
+  description: Use nmap to scan SMB
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c eternalBlue
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.eternalBlue
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c eternalBlue
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.eternalBlue
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c eternalBlue
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.eternalBlue
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c eternalBlue
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.eternalBlue
+          script: ''
+

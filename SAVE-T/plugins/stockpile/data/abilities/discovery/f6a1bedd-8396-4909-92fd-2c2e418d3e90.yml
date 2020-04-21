@@ -1,0 +1,46 @@
+---
+
+- id: f6a1bedd-8396-4909-92fd-2c2e418d3e90
+  name: Quick Fingerprint SSH
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ssh
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.ssh
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c ssh
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.ssh
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ssh
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.ssh
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c ssh
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.ssh
+          script: ''
+

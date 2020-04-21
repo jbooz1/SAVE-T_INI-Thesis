@@ -1,0 +1,15 @@
+---
+
+- id: d189c023-314c-4445-b1c5-6634b827e183
+  name: Metasploit Start Sandcat
+  description: Starts a Sandcat Agent on all Metasploit sessions
+  tactic: Execution
+  technique:
+    attack_id: T1059
+    name: Command-Line Interface
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_sandcat_start.py --server #{server}
+        payload: metasploit_sandcat_start.py

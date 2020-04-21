@@ -1,0 +1,9 @@
+description: testing windows things
+id: c46c3395-e99e-4030-b27e-d4a44a030600
+name: windows_smb_test
+phases:
+  '1': [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  '2': [e126cf64-e958-4677-a0c4-c0420b3f3ad8]
+  '3': [405d7d46-cdb9-4c7f-97e9-7feba3bea2f6]
+  3: [47c04fce-7354-4cfa-8922-4b0c1369c7b1]
+  4: [a1a12e72-80be-47dc-86c3-7dbe6745259c, d189c023-314c-4445-b1c5-6634b827e183]

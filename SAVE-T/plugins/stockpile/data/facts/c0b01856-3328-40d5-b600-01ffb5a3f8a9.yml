@@ -1,0 +1,27 @@
+---
+
+id: c0b01856-3328-40d5-b600-01ffb5a3f8a9
+name: winPlus
+facts:
+  - property: remote.host.ip
+    value: 192.168.1.10
+  - property: remote.host.ip
+    value: 192.168.1.11
+  - property: remote.host.ip
+    value: 192.168.1.12
+  - property: remote.host.ip
+    value: 192.168.1.100
+  - property: remote.host.ip
+    value: 192.168.1.107
+  - property: remote.host.ip
+    value: 192.168.1.108
+  - property: remote.host.ip
+    value: 192.168.1.110
+  - property: remote.host.ip
+    value: 192.168.1.111
+  - property: remote.host.ip
+    value: 192.168.1.117
+  - property: remote.host.ip
+    value: 192.168.1.118
+  - property: remote.host.ip
+    value: 192.168.1.120

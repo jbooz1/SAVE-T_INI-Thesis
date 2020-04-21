@@ -1,0 +1,19 @@
+---
+
+- id: bc77ffeb-74f3-486f-8a9e-2af50493b4fd
+  name: Exploit IIS With Metasploit
+  description: Use Metasploit to Exploit an IIS Server
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.service.iis} --server #{server} --keywords iis
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

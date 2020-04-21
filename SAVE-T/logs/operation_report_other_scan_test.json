@@ -1,0 +1,298 @@
+{
+    "name": "other_scan_test",
+    "id": 2,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-11-03 18:46:35",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 22080,
+            "ppid": 13192,
+            "trusted": 1,
+            "last_trusted_seen": "2019-11-03 18:46:35",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-11-03 18:45:39",
+    "facts": [
+        {
+            "id": 5,
+            "property": "remote.host.ip",
+            "value": "192.168.1.1",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 6,
+            "property": "remote.host.ip",
+            "value": "192.168.1.24",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 7,
+            "property": "remote.host.ip",
+            "value": "192.168.1.59",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 8,
+            "property": "remote.host.ip",
+            "value": "192.168.1.250",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "2",
+            "link_id": null
+        },
+        {
+            "id": 9,
+            "property": "remote.host.socket",
+            "value": "192.168.1.1:53",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 1
+        },
+        {
+            "id": 10,
+            "property": "remote.host.socket",
+            "value": "192.168.1.1:80",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 1
+        },
+        {
+            "id": 11,
+            "property": "remote.host.socket",
+            "value": "192.168.1.24:22",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 2
+        },
+        {
+            "id": 12,
+            "property": "remote.host.socket",
+            "value": "192.168.1.24:8080",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 2
+        },
+        {
+            "id": 13,
+            "property": "remote.host.socket",
+            "value": "192.168.1.59:22",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 3
+        },
+        {
+            "id": 14,
+            "property": "remote.host.socket",
+            "value": "192.168.1.59:80",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 3
+        },
+        {
+            "id": 15,
+            "property": "remote.host.socket",
+            "value": "192.168.1.250:80",
+            "score": 1,
+            "set_id": 0,
+            "source_id": "4",
+            "link_id": 4
+        }
+    ],
+    "finish": "2019-11-03 18:46:36",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 13,
+        "adversary_id": "6375c16a-34e9-4eea-8906-0930831936b4",
+        "name": "other_scan",
+        "description": "other_scan",
+        "phases": {
+            "1": [
+                {
+                    "id": 23,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [
+                        {
+                            "ability": 23,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 23,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 24,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [
+                        {
+                            "ability": 24,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 24,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                },
+                {
+                    "id": 25,
+                    "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+                    "tactic": "discovery",
+                    "technique_name": "Network Service Scanning",
+                    "technique_id": "T1046",
+                    "name": "Scan IP for ports",
+                    "test": "cHl0aG9uMyBzY2FubmVyLnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Use dropped scanner to find open popular ports",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [
+                        {
+                            "ability": 25,
+                            "name": "line",
+                            "property": "remote.host.socket",
+                            "script": ""
+                        }
+                    ],
+                    "payload": [
+                        {
+                            "ability": 25,
+                            "payload": "scanner.py"
+                        }
+                    ],
+                    "adversary_map_id": 64
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 scanner.py -i 192.168.1.1",
+            "delegated": "2019-11-03 18:46:14.600089",
+            "run": "2019-11-03 18:46:14",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 scanner.py -i 192.168.1.24",
+            "delegated": "2019-11-03 18:46:14.600800",
+            "run": "2019-11-03 18:46:21",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 scanner.py -i 192.168.1.59",
+            "delegated": "2019-11-03 18:46:14.601431",
+            "run": "2019-11-03 18:46:28",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        },
+        {
+            "ability_id": "47abe1f5-55a5-46cc-8cad-506dac8ea6d9",
+            "paw": "kali$root",
+            "command": "python3 scanner.py -i 192.168.1.250",
+            "delegated": "2019-11-03 18:46:14.601884",
+            "run": "2019-11-03 18:46:35",
+            "status": 0,
+            "description": "Use dropped scanner to find open popular ports",
+            "name": "Scan IP for ports",
+            "attack": {
+                "tactic": "discovery",
+                "technique_name": "Network Service Scanning",
+                "technique_id": "T1046"
+            }
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+description: scan host and then metasploit
+id: 8d48c388-b2ee-4293-8e80-2adce1b0f47c
+name: scan then metasploit
+phases:
+  1: [47abe1f5-55a5-46cc-8cad-506dac8ea6d9]
+  2: [47c04fce-7354-4cfa-8922-4b0c1369c7b1]

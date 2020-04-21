@@ -1,0 +1,11 @@
+description: windows adversary with more fingerprinting for apache struts and iis
+id: ff68a9da-50c6-4b89-85a5-1ce193be9509
+name: windows_adversary_fingerprint
+phases:
+  '1': [47abe1f5-55a5-46cc-8cad-506dac8ea6d9, baac2c6d-4652-4b7e-ab0a-f1bf246edd12]
+  '2': [00d0b0bd-d411-4a3d-bcbd-32687d10c03f, 1e0ff374-63e2-4456-bece-f73732de08a1,
+    e126cf64-e958-4677-a0c4-c0420b3f3ad8]
+  '3': [405d7d46-cdb9-4c7f-97e9-7feba3bea2f6, 4c3d38aa-10bc-4d3e-84cd-021308d0793b,
+    88c8beaf-da10-489e-896f-49fb583a1a0c, bc77ffeb-74f3-486f-8a9e-2af50493b4fd]
+  '4': [a1a12e72-80be-47dc-86c3-7dbe6745259c, d189c023-314c-4445-b1c5-6634b827e183,
+    f874e67a-6f21-4dfc-9f94-da144ce6300d]

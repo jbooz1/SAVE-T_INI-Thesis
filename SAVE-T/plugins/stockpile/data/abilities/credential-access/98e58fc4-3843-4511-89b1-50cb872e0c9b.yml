@@ -1,0 +1,14 @@
+---
+
+- id: 98e58fc4-3843-4511-89b1-50cb872e0c9b
+  name: Credentials in Registry
+  description: Search for possible credentials stored in the HKLM Hive
+  tactic: credential-access
+  technique:
+    attack_id: T1003
+    name: Credential Dumping
+  platforms:
+    windows:
+      psh:
+        command: |
+          reg query HKLM /f password /t REG_SZ /s

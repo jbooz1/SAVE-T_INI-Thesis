@@ -1,0 +1,6 @@
+description: mimikatz and domain smb
+id: d769e33e-a8bb-458d-93b8-123e285c28aa
+name: mimi_domain
+phases:
+  1: [baac2c6d-4652-4b7e-ab0a-f1bf246edd12]
+  2: [f874e67a-6f21-4dfc-9f94-da144ce6300d]

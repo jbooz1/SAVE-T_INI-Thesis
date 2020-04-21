@@ -1,0 +1,20 @@
+---
+
+- id: 0360ede1-3c28-48d3-a6ef-6e98f562c5af
+  name: GetComputers (Alice)
+  description: Get a list of all computers in a domain
+  tactic: discovery
+  technique:
+    attack_id: T1003
+    name: discovery
+  platforms:
+    windows:
+      psh:
+        command: |
+          Import-Module .\PowerView.ps1 -Force;
+          Get-NetComputer
+        payload: PowerView.ps1
+        parser:
+          name: regex
+          property: host.host.fqdn
+          script: '[\S]+'

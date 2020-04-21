@@ -1,0 +1,16 @@
+description: large adversary with many fingerprinting services
+id: c21a3dfa-d7cf-4069-a6af-027c861d8625
+name: big_adversary_fingerprint
+phases:
+  '1': [47abe1f5-55a5-46cc-8cad-506dac8ea6d9, baac2c6d-4652-4b7e-ab0a-f1bf246edd12]
+  '2': [00d0b0bd-d411-4a3d-bcbd-32687d10c03f, 01526ad5-025e-46d4-ace6-eadd2ea4f55b,
+    1e0ff374-63e2-4456-bece-f73732de08a1, 48faddd2-d150-4c2b-ac8f-e2c85b98c84c, 50363ad7-ce2e-42b1-a4be-04b041f65a9d,
+    e126cf64-e958-4677-a0c4-c0420b3f3ad8, f6a1bedd-8396-4909-92fd-2c2e418d3e90]
+  2: [05c622b0-1ea4-40f3-8b45-affb97befa3d]
+  '3': [049260e4-f227-4da6-a655-5cfebf9b452e, 0f149071-3772-46a7-9d44-0391411e381a,
+    22964b17-efad-44fb-808e-d690f1a1c8f4, 405d7d46-cdb9-4c7f-97e9-7feba3bea2f6, 4c3d38aa-10bc-4d3e-84cd-021308d0793b,
+    88c8beaf-da10-489e-896f-49fb583a1a0c, a5e34950-0687-4dae-b090-4a835e01c68d, b4e1f059-7408-44d5-8c38-74acc95463e5,
+    bc77ffeb-74f3-486f-8a9e-2af50493b4fd]
+  3: [1315ea39-be5e-4a21-9dac-ac54b1a7cd25]
+  '4': [a1a12e72-80be-47dc-86c3-7dbe6745259c, d189c023-314c-4445-b1c5-6634b827e183,
+    f874e67a-6f21-4dfc-9f94-da144ce6300d]

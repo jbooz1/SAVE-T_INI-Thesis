@@ -1,0 +1,13 @@
+---
+
+id: 2290d4b9-f314-4284-85d2-2b326edece82
+name: demo
+facts:
+  - property: remote.host.ip
+    value: 192.168.1.1
+  - property: remote.host.ip
+    value: 192.168.1.24
+  - property: remote.host.ip
+    value: 192.168.1.59
+  - property: remote.host.ip
+    value: 192.168.1.250

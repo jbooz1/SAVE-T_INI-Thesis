@@ -1,0 +1,45 @@
+---
+
+- id: 50363ad7-ce2e-42b1-a4be-04b041f65a9d
+  name: Scan Host to Fingerprint Trendnet Cameras
+  description: Use dropped fingerprinter to find popular services
+  tactic: discovery
+  technique:
+    attack_id: T1046
+    name: Network Service Scanning
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c Trendnet
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.trendnet
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./fingerprint.py -s #{remote.host.socket} -c Trendnet
+        payload: fingerprint.py
+        parser:
+          name: line
+          property: remote.service.trendnet
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c Trendnet
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.trendnet
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\fingerprint.exe -s #{remote.host.socket} -c Trendnet
+        payload: fingerprint.exe
+        parser:
+          name: line
+          property: remote.service.trendnet
+          script: ''

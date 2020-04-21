@@ -1,0 +1,46 @@
+---
+
+- id: 22964b17-efad-44fb-808e-d690f1a1c8f4
+  name: Brute Force SSH
+  description: Use dropped file to brute force credentials
+  tactic: credential-access
+  technique:
+    attack_id: T1110
+    name: Brute Force
+  platforms:
+    darwin:
+      sh:
+        command: |
+          python3 ./bruteForce.py --target #{remote.service.ssh}
+        payload: bruteForce.py
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+    linux:
+      sh:
+        command: |
+          python3 ./bruteForce.py --target #{remote.service.ssh}
+        payload: bruteForce.py
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+    windows:
+      psh:
+        command: |
+          C:\Users\Public\bruteForce.exe --target #{remote.service.ssh}
+        payload: bruteForce.exe
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+      cmd:
+        command: |
+          C:\Users\Public\bruteForce.exe --target #{remote.service.ssh}
+        payload: bruteForce.exe
+        parser:
+          name: line
+          property: remote.host.credentials
+          script: ''
+

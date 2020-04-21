@@ -1,0 +1,6 @@
+description: copies sandcat over smb
+id: 63784b2d-cc61-45ab-a53f-428cffdf3f67
+name: copy sandcat smb
+phases:
+  1: [405d7d46-cdb9-4c7f-97e9-7feba3bea2f6]
+  2: [c5e75d70-09ae-469f-8717-621a1b7ef946]
