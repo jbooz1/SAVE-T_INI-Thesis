@@ -1,0 +1,3 @@
+apacheStruts_exploit,"alert tcp any any -> IPADDRESS PORT (content:""java.lang.Process""; msg:""Apahce Struts Exploit""; sid:10000010;)"
+thinkPHP_exploit,"alert tcp any any -> IPADDRESS PORT (content:""\|system""; msg:""ThinkPHP Exploit""; sid:10000011;)"
+trendnet_exploit,"alert tcp any any -> IPADDRESS PORT (content:""cmd=""; msg:""Trendnet Exploit""; sid:10000012;)"
